@@ -1,64 +1,66 @@
 <section class="milestones-section" aria-label="Company Milestones">
-  <div class="container">
-    <div class="milestones-top" data-aos="fade-down">
-      <div class="status-pill status-pill--dark">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>MILESTONES</span>
-      </div>
-    </div>
-
-    <div class="milestones-header" data-aos="fade-up">
-      <h2 class="milestones-heading">
-        <span class="milestones-heading__solid">27 years,</span>
-        <span class="milestones-heading__muted">one building at a time.</span>
-      </h2>
-
-      <div class="milestones-counter" aria-live="polite">
-        <span class="milestones-counter__num">{{ padNumber(activeIndex() + 1) }}</span>
-        <span class="milestones-counter__sep">/</span>
-        <span>{{ padNumber(milestones.length) }}</span>
-      </div>
-    </div>
-
-    <div class="milestones-stage">
-      @for (item of [currentMilestone()]; track item.year) {
-        <div class="milestones-info">
-          <div class="milestones-year">{{ item.year }}</div>
-          <h3 class="milestones-title">{{ item.title }}</h3>
-          <p class="milestones-desc">{{ item.description }}</p>
+  <div class="milestones-sticky">
+    <div class="container">
+      <div class="milestones-top" data-aos="fade-down">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>MILESTONES</span>
         </div>
+      </div>
 
-        <div class="milestones-media">
-          <img
-            [src]="item.image"
-            [alt]="item.title"
-            class="milestones-media__img"
-          />
-          <div class="ruler-ticks milestones-media__ruler" aria-hidden="true"></div>
+      <div class="milestones-header" data-aos="fade-up">
+        <h2 class="milestones-heading">
+          <span class="milestones-heading__solid">27 years,</span>
+          <span class="milestones-heading__muted">one building at a time.</span>
+        </h2>
+
+        <div class="milestones-counter" aria-live="polite">
+          <span class="milestones-counter__num">{{ padNumber(activeIndex() + 1) }}</span>
+          <span class="milestones-counter__sep">/</span>
+          <span>{{ padNumber(milestones.length) }}</span>
         </div>
-      }
-    </div>
+      </div>
 
-    <nav class="milestones-nav" aria-label="Milestone Years">
-      <div
-        class="milestones-track"
-        [style.--active-idx]="activeIndex()"
-        [style.--tab-count]="milestones.length"
-      >
-        <div class="milestones-track__indicator" aria-hidden="true"></div>
-        @for (item of milestones; track item.year; let i = $index) {
-          <button
-            type="button"
-            class="milestones-tab"
-            [class.milestones-tab--active]="i === activeIndex()"
-            [attr.aria-current]="i === activeIndex() ? 'step' : null"
-            (click)="selectMilestone(i)"
-          >
-            <span class="milestones-tab__dot" aria-hidden="true"></span>
-            <span>{{ item.year }}</span>
-          </button>
+      <div class="milestones-stage">
+        @for (item of [currentMilestone()]; track item.year) {
+          <div class="milestones-info">
+            <div class="milestones-year">{{ item.year }}</div>
+            <h3 class="milestones-title">{{ item.title }}</h3>
+            <p class="milestones-desc">{{ item.description }}</p>
+          </div>
+
+          <div class="milestones-media">
+            <img
+              [src]="item.image"
+              [alt]="item.title"
+              class="milestones-media__img"
+            />
+            <div class="ruler-ticks milestones-media__ruler" aria-hidden="true"></div>
+          </div>
         }
       </div>
-    </nav>
+
+      <nav class="milestones-nav" aria-label="Milestone Years">
+        <div
+          class="milestones-track"
+          [style.--active-idx]="activeIndex()"
+          [style.--tab-count]="milestones.length"
+        >
+          <div class="milestones-track__indicator" aria-hidden="true"></div>
+          @for (item of milestones; track item.year; let i = $index) {
+            <button
+              type="button"
+              class="milestones-tab"
+              [class.milestones-tab--active]="i === activeIndex()"
+              [attr.aria-current]="i === activeIndex() ? 'step' : null"
+              (click)="selectMilestone(i)"
+            >
+              <span class="milestones-tab__dot" aria-hidden="true"></span>
+              <span>{{ item.year }}</span>
+            </button>
+          }
+        </div>
+      </nav>
+    </div>
   </div>
 </section>
