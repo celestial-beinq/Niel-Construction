@@ -32,7 +32,7 @@ import { NielDataService } from '../../services/niel-data.service';
       <!-- Pinned Company Timeline -->
       <section class="timeline-section">
         <div class="container timeline-grid">
-          <div class="timeline-sticky">
+          <div class="timeline-sticky" data-aos="fade-right">
             <div class="status-pill status-pill--dark">
               <span class="status-dot" aria-hidden="true"></span>
               <span>COMPANY TIMELINE</span>
@@ -49,7 +49,11 @@ import { NielDataService } from '../../services/niel-data.service';
 
           <div class="timeline-list">
             @for (item of timeline; track item.year) {
-              <article class="timeline-card">
+              <article
+                class="timeline-card"
+                [attr.data-aos]="$index % 2 === 0 ? 'fade-up-left' : 'zoom-in-left'"
+                [attr.data-aos-delay]="$index * 80"
+              >
                 <div class="timeline-card__top">
                   <span class="timeline-card__year">{{ item.year }}</span>
                   <span class="timeline-card__metric">{{ item.metric }}</span>

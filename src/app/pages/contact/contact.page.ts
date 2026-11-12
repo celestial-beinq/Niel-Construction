@@ -28,17 +28,17 @@ import { FooterComponent } from '../../components/footer/footer.component';
 
       <section class="office-strip">
         <div class="container office-grid">
-          <div class="office-card">
+          <div class="office-card" data-aos="flip-left" data-aos-delay="0">
             <span class="office-card__tag">HEADQUARTERS</span>
-            <h3>Chicago, IL</h3>
-            <p>410 N Industrial Pkwy, Suite 300<br />Chicago, IL 60611</p>
+            <h3>Victoria Island, Lagos</h3>
+            <p>Plot 14 Adeola Odeku Street<br />Victoria Island, Lagos, Nigeria</p>
           </div>
-          <div class="office-card">
+          <div class="office-card" data-aos="zoom-in-up" data-aos-delay="100">
             <span class="office-card__tag">PRE-CONSTRUCTION DESK</span>
             <h3>Direct Dispatch</h3>
-            <p>estimates&#64;nielconstruction.com<br />+1 (312) 555-0198</p>
+            <p>estimates&#64;nielconstruction.com<br />+234 809 555 0198</p>
           </div>
-          <div class="office-card">
+          <div class="office-card" data-aos="flip-right" data-aos-delay="200">
             <span class="office-card__tag">FIELD HOURS</span>
             <h3>Active Operations</h3>
             <p>Mon – Fri: 06:30 – 18:30<br />Sat: 08:00 – 14:00</p>

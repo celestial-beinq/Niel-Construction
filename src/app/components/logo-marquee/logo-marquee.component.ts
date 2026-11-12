@@ -6,11 +6,11 @@ import { NielDataService } from '../../services/niel-data.service';
   standalone: true,
   template: `
     <section class="marquee-band" aria-label="Trusted by leading developers">
-      <div class="container marquee-label-row">
+      <div class="container marquee-label-row" data-aos="fade-down">
         <span class="marquee-label">TRUSTED BY LEADING DEVELOPERS</span>
       </div>
       <div class="container">
-        <div class="marquee-viewport">
+        <div class="marquee-viewport" data-aos="zoom-out" data-aos-delay="100">
           <div class="marquee-track">
             @for (logo of logos; track $index) {
               <div class="marquee-cell" [attr.data-style]="logo.style">

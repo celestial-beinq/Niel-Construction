@@ -13,7 +13,7 @@
 
   <div class="container hero-content">
     <!-- Top-Right Tag -->
-    <div class="hero-top-row">
+    <div class="hero-top-row" data-aos="fade-down">
       <div class="status-pill status-pill--dark">
         <span class="status-dot" aria-hidden="true"></span>
         <span>WE ARE NIEL</span>
@@ -23,20 +23,20 @@
     <!-- Main Headline -->
     <div class="hero-headline-wrap">
       <h1 class="hero-title">
-        <span class="hero-title__muted">More than construction,</span>
-        <span class="hero-title__solid">we build what lasts.</span>
+        <span class="hero-title__muted" data-aos="fade-right">More than construction,</span>
+        <span class="hero-title__solid" data-aos="fade-left" data-aos-delay="120">we build what lasts.</span>
       </h1>
     </div>
 
     <!-- Lower Split Row: Left Copy + CTAs | Right Director Card -->
     <div class="hero-lower-grid">
       <div class="hero-lead-col">
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="180">
           General contracting, design-build and pre-construction for commercial,
           residential and industrial projects — delivered on schedule since 1998.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-actions" data-aos="zoom-in-up" data-aos-delay="260">
           <button
             type="button"
             class="btn-split btn-split--white"
@@ -66,7 +66,7 @@
       </div>
 
       <!-- Floating Director / Site Visit Card -->
-      <aside class="director-card" aria-label="Project Director Contact">
+      <aside class="director-card" aria-label="Project Director Contact" data-aos="fade-up-left" data-aos-delay="220">
         <div class="director-card__body">
           <div class="director-card__profile">
             <div class="director-card__avatar-wrap">
@@ -114,7 +114,7 @@
   <div class="hero-footer">
     <div class="container hero-stats">
       @for (stat of stats; track stat.label) {
-        <div class="hero-stat">
+        <div class="hero-stat" data-aos="zoom-in" [attr.data-aos-delay]="$index * 90">
           <span class="hero-stat__value">{{ stat.value }}</span>
           <span class="hero-stat__label">{{ stat.label }}</span>
         </div>

@@ -32,7 +32,7 @@ import { NielDataService } from '../../services/niel-data.service';
 
         <section class="article-body-section">
           <div class="container article-container">
-            <div class="article-author-bar">
+            <div class="article-author-bar" data-aos="fade-down">
               <div>
                 <strong>{{ art.author }}</strong>
                 <span>{{ art.authorRole }}</span>
@@ -40,13 +40,13 @@ import { NielDataService } from '../../services/niel-data.service';
               <a routerLink="/news" class="back-link">← ALL DISPATCHES</a>
             </div>
 
-            <div class="article-hero-img">
+            <div class="article-hero-img" data-aos="zoom-in">
               <img [src]="art.image" [alt]="art.title" />
             </div>
 
             <div class="article-prose">
               @for (p of art.paragraphs; track $index) {
-                <p>{{ p }}</p>
+                <p data-aos="fade-up" [attr.data-aos-delay]="$index * 60">{{ p }}</p>
               }
             </div>
           </div>

@@ -11,19 +11,19 @@ import { FooterComponent } from '../../components/footer/footer.component';
     <app-navbar />
     <main class="not-found">
       <div class="container not-found__inner">
-        <div class="status-pill status-pill--dark">
+        <div class="status-pill status-pill--dark" data-aos="fade-down">
           <span class="status-dot" aria-hidden="true"></span>
           <span>404 // BLUEPRINT NOT FOUND</span>
         </div>
         <h1 class="not-found__title">
-          <span class="muted">This sector isn’t</span>
-          <span>under construction.</span>
+          <span class="muted" data-aos="fade-right" data-aos-delay="80">This sector isn’t</span>
+          <span data-aos="fade-left" data-aos-delay="140">under construction.</span>
         </h1>
-        <p class="not-found__copy">
+        <p class="not-found__copy" data-aos="fade-up" data-aos-delay="200">
           The page or project dossier you requested has moved or does not exist.
           Return to the NIEL Construction home site.
         </p>
-        <a class="btn-split btn-split--white" routerLink="/">
+        <a class="btn-split btn-split--white" routerLink="/" data-aos="zoom-in-up" data-aos-delay="260">
           <span>RETURN HOME</span>
           <span class="btn-split__arrow" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

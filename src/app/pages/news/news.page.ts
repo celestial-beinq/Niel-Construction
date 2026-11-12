@@ -29,7 +29,7 @@ import { NewsCategory, NielDataService } from '../../services/niel-data.service'
 
       <section class="news-catalog">
         <div class="container">
-          <div class="filter-bar" role="tablist" aria-label="Filter articles">
+          <div class="filter-bar" role="tablist" aria-label="Filter articles" data-aos="fade-down">
             @for (cat of categories; track cat) {
               <button
                 type="button"
@@ -45,7 +45,12 @@ import { NewsCategory, NielDataService } from '../../services/niel-data.service'
 
           <div class="articles-grid">
             @for (article of filteredArticles(); track article.slug) {
-              <a class="article-card" [routerLink]="['/news', article.slug]">
+              <a
+                class="article-card"
+                [routerLink]="['/news', article.slug]"
+                [attr.data-aos]="$index % 3 === 0 ? 'fade-up-right' : ($index % 3 === 1 ? 'zoom-in-up' : 'fade-up-left')"
+                [attr.data-aos-delay]="$index * 90"
+              >
                 <div class="article-card__media">
                   <img [src]="article.image" [alt]="article.title" loading="lazy" />
                 </div>

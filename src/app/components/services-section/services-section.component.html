@@ -1,7 +1,7 @@
 <section id="services" class="services-section">
   <div class="container">
     <div class="services-header">
-      <div class="services-header__left">
+      <div class="services-header__left" data-aos="fade-right">
         <div class="status-pill status-pill--light">
           <span class="status-dot" aria-hidden="true"></span>
           <span>SERVICES</span>
@@ -13,7 +13,7 @@
         </h2>
       </div>
 
-      <div class="services-header__right">
+      <div class="services-header__right" data-aos="fade-left" data-aos-delay="100">
         <p class="services-lead">
           We cover the full building lifecycle in-house, so nothing gets lost
           between design, procurement and the site.
@@ -31,7 +31,12 @@
 
     <div class="services-grid">
       @for (service of services; track service.slug) {
-        <a class="service-card" [routerLink]="['/services', service.slug]">
+        <a
+          class="service-card"
+          [routerLink]="['/services', service.slug]"
+          [attr.data-aos]="$index % 2 === 0 ? 'zoom-in-up' : 'zoom-in-down'"
+          [attr.data-aos-delay]="$index * 90"
+        >
           <div class="service-card__media">
             <img [src]="service.image" [alt]="service.title" loading="lazy" />
           </div>

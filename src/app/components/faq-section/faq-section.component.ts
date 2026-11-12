@@ -7,7 +7,7 @@ import { NielDataService } from '../../services/niel-data.service';
   template: `
     <section class="faq-section">
       <div class="container faq-grid">
-        <div class="faq-lead">
+        <div class="faq-lead" data-aos="fade-right">
           <div class="status-pill status-pill--light">
             <span class="status-dot" aria-hidden="true"></span>
             <span>COMMON QUESTIONS</span>
@@ -24,7 +24,12 @@ import { NielDataService } from '../../services/niel-data.service';
 
         <div class="faq-list">
           @for (item of faqs; track item.question; let idx = $index) {
-            <div class="faq-item" [class.faq-item--open]="openIndex() === idx">
+            <div
+              class="faq-item"
+              [class.faq-item--open]="openIndex() === idx"
+              data-aos="fade-left"
+              [attr.data-aos-delay]="idx * 70"
+            >
               <button
                 type="button"
                 class="faq-trigger"

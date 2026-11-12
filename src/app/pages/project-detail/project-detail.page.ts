@@ -33,19 +33,19 @@ import { NielDataService } from '../../services/niel-data.service';
         <!-- Stats Band -->
         <section class="stats-band">
           <div class="container stats-band__grid">
-            <div class="stat-cell">
+            <div class="stat-cell" data-aos="fade-up" data-aos-delay="0">
               <span class="stat-cell__label">TOTAL AREA</span>
               <strong class="stat-cell__value">{{ prj.area }}</strong>
             </div>
-            <div class="stat-cell">
+            <div class="stat-cell" data-aos="fade-down" data-aos-delay="80">
               <span class="stat-cell__label">DURATION</span>
               <strong class="stat-cell__value">{{ prj.duration }}</strong>
             </div>
-            <div class="stat-cell">
+            <div class="stat-cell" data-aos="zoom-in" data-aos-delay="160">
               <span class="stat-cell__label">CONTRACT VALUE</span>
               <strong class="stat-cell__value">{{ prj.value }}</strong>
             </div>
-            <div class="stat-cell">
+            <div class="stat-cell" data-aos="flip-up" data-aos-delay="240">
               <span class="stat-cell__label">DELIVERY</span>
               <strong class="stat-cell__value">{{ prj.year }} · ON SCHEDULE</strong>
             </div>
@@ -56,23 +56,23 @@ import { NielDataService } from '../../services/niel-data.service';
         <section class="case-study">
           <div class="container case-study__grid">
             <div class="case-study__content">
-              <div class="case-study__hero-img-wrap">
+              <div class="case-study__hero-img-wrap" data-aos="zoom-out">
                 <img [src]="prj.image" [alt]="prj.title" class="case-study__hero-img" />
               </div>
 
-              <div class="case-block">
+              <div class="case-block" data-aos="fade-right">
                 <span class="case-block__tag">01 // THE CHALLENGE</span>
                 <h2>Site &amp; Structural Constraints</h2>
                 <p>{{ prj.challenge }}</p>
               </div>
 
-              <div class="case-block">
+              <div class="case-block" data-aos="fade-left">
                 <span class="case-block__tag">02 // NIEL SOLUTION</span>
                 <h2>Engineering &amp; Sequencing</h2>
                 <p>{{ prj.solution }}</p>
               </div>
 
-              <div class="case-block">
+              <div class="case-block" data-aos="fade-up">
                 <span class="case-block__tag">03 // OUTCOME</span>
                 <h2>Schedule &amp; Budget Performance</h2>
                 <p>{{ prj.outcome }}</p>
@@ -81,12 +81,18 @@ import { NielDataService } from '../../services/niel-data.service';
               <!-- Photo Gallery -->
               <div class="case-gallery">
                 @for (img of prj.gallery; track $index) {
-                  <img [src]="img" [alt]="prj.title + ' view ' + ($index + 1)" loading="lazy" />
+                  <img
+                    [src]="img"
+                    [alt]="prj.title + ' view ' + ($index + 1)"
+                    loading="lazy"
+                    [attr.data-aos]="$index === 0 ? 'zoom-in-right' : ($index === 1 ? 'zoom-in-up' : 'zoom-in-left')"
+                    [attr.data-aos-delay]="$index * 90"
+                  />
                 }
               </div>
 
               <!-- Client Quote -->
-              <blockquote class="case-quote">
+              <blockquote class="case-quote" data-aos="flip-left">
                 <p>“{{ prj.clientQuote.quote }}”</p>
                 <footer>
                   <strong>{{ prj.clientQuote.author }}</strong> — {{ prj.clientQuote.role }}
@@ -94,7 +100,7 @@ import { NielDataService } from '../../services/niel-data.service';
               </blockquote>
             </div>
 
-            <aside class="sticky-project-card">
+            <aside class="sticky-project-card" data-aos="fade-up-left">
               <div class="spec-label">PROJECT DOSSIER</div>
               <div class="spec-row">
                 <span>PROJECT CODE</span>

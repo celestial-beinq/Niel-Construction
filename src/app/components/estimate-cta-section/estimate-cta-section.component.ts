@@ -16,17 +16,17 @@ export class EstimateCtaSectionComponent {
     company: '',
     email: '',
     sector: 'Commercial',
-    budget: '$10M – $35M',
+    budget: '₦5B – ₦20B',
     startDate: 'Q1 2027',
     area: '',
     notes: '',
   };
 
   protected readonly budgets = [
-    '$3M – $10M',
-    '$10M – $35M',
-    '$35M – $75M',
-    '$75M+',
+    '₦1.5B – ₦5B',
+    '₦5B – ₦20B',
+    '₦20B – ₦50B',
+    '₦50B+',
   ];
 
   protected readonly sectors = [
@@ -50,7 +50,7 @@ export class EstimateCtaSectionComponent {
       company: '',
       email: '',
       sector: 'Commercial',
-      budget: '$10M – $35M',
+      budget: '₦5B – ₦20B',
       startDate: 'Q1 2027',
       area: '',
       notes: '',

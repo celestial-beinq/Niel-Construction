@@ -7,7 +7,7 @@ import { NielDataService } from '../../services/niel-data.service';
   template: `
     <section class="reviews-section">
       <div class="container">
-        <div class="reviews-header">
+        <div class="reviews-header" data-aos="fade-up">
           <div class="status-pill status-pill--dark">
             <span class="status-dot" aria-hidden="true"></span>
             <span>CLIENT REVIEWS</span>
@@ -20,7 +20,11 @@ import { NielDataService } from '../../services/niel-data.service';
 
         <div class="reviews-grid">
           @for (review of reviews; track review.projectCode) {
-            <article class="review-card">
+            <article
+              class="review-card"
+              [attr.data-aos]="$index === 0 ? 'fade-right' : ($index === 1 ? 'zoom-in' : 'fade-left')"
+              [attr.data-aos-delay]="$index * 100"
+            >
               <div class="review-card__top">
                 <span class="review-card__code">{{ review.projectCode }}</span>
                 <span class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</span>

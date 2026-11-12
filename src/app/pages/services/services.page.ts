@@ -33,7 +33,11 @@ import { NielDataService } from '../../services/niel-data.service';
         <div class="container">
           <div class="catalog-grid">
             @for (service of services; track service.slug) {
-              <article class="catalog-card">
+              <article
+                class="catalog-card"
+                [attr.data-aos]="$index % 2 === 0 ? 'zoom-in-right' : 'zoom-in-left'"
+                [attr.data-aos-delay]="$index * 90"
+              >
                 <div class="catalog-card__top">
                   <span class="catalog-card__index">{{ service.index }}</span>
                   <span class="catalog-card__tag">{{ service.tag }}</span>

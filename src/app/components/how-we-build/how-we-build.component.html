@@ -1,13 +1,17 @@
 <section id="how-we-build" class="how-we-build-section">
   <div class="container">
-    <div class="status-pill status-pill--dark how-we-build__pill">
+    <div class="status-pill status-pill--dark how-we-build__pill" data-aos="fade-right">
       <span class="status-dot" aria-hidden="true"></span>
       <span>HOW WE BUILD</span>
     </div>
 
     <div class="how-we-build__grid">
       @for (step of steps; track step.label) {
-        <article class="build-step">
+        <article
+          class="build-step"
+          [attr.data-aos]="$index % 2 === 0 ? 'flip-up' : 'flip-down'"
+          [attr.data-aos-delay]="$index * 100"
+        >
           <span class="build-step__label">{{ step.label }}</span>
           <h3 class="build-step__title">{{ step.title }}</h3>
           <p class="build-step__desc">{{ step.description }}</p>

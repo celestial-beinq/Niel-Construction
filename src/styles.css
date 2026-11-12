@@ -1,4 +1,6 @@
 /* NIEL Construction — Global Design System */
+@import 'aos/dist/aos.css';
+
 :root {
   --niel-bg-dark: #0c1013;
   --niel-surface-dark: #14191e;
@@ -43,6 +45,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+main,
+section {
+  overflow-x: clip;
 }
 
 a {

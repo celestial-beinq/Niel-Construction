@@ -33,10 +33,14 @@ import { NielDataService } from '../../services/niel-data.service';
         <section class="detail-section">
           <div class="container detail-grid">
             <div class="detail-main">
-              <h2 class="detail-heading">Execution Workflow</h2>
+              <h2 class="detail-heading" data-aos="fade-right">Execution Workflow</h2>
               <div class="steps-stack">
                 @for (step of svc.processSteps; track step.step) {
-                  <article class="step-card">
+                  <article
+                    class="step-card"
+                    [attr.data-aos]="$index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'"
+                    [attr.data-aos-delay]="$index * 80"
+                  >
                     <span class="step-card__num">{{ step.step }}</span>
                     <div>
                       <h3 class="step-card__title">{{ step.title }}</h3>
@@ -46,10 +50,10 @@ import { NielDataService } from '../../services/niel-data.service';
                 }
               </div>
 
-              <h2 class="detail-heading detail-heading--spaced">Included Deliverables</h2>
+              <h2 class="detail-heading detail-heading--spaced" data-aos="fade-right">Included Deliverables</h2>
               <ul class="deliverables-grid">
                 @for (item of svc.deliverables; track item) {
-                  <li>
+                  <li data-aos="zoom-in" [attr.data-aos-delay]="$index * 50">
                     <span class="deliverable-dot" aria-hidden="true"></span>
                     <span>{{ item }}</span>
                   </li>
@@ -57,7 +61,7 @@ import { NielDataService } from '../../services/niel-data.service';
               </ul>
             </div>
 
-            <aside class="sticky-spec">
+            <aside class="sticky-spec" data-aos="flip-right">
               <div class="spec-label">SERVICE SPECIFICATION</div>
               <div class="spec-row">
                 <span>DISCIPLINE</span>

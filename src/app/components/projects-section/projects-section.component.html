@@ -1,7 +1,7 @@
 <section id="projects" class="projects-section">
   <div class="container">
     <div class="projects-header">
-      <div class="projects-header__left">
+      <div class="projects-header__left" data-aos="fade-down-right">
         <div class="status-pill status-pill--dark">
           <span class="status-dot" aria-hidden="true"></span>
           <span>SELECTED PROJECTS</span>
@@ -13,7 +13,7 @@
         </h2>
       </div>
 
-      <div class="projects-header__right">
+      <div class="projects-header__right" data-aos="fade-down-left" data-aos-delay="100">
         <p class="projects-lead">
           A few recent builds across commercial, residential and civic work.
         </p>
@@ -34,6 +34,8 @@
           class="bento-card"
           [class.bento-card--featured]="$first"
           [routerLink]="['/projects', project.slug]"
+          [attr.data-aos]="$first ? 'zoom-in-right' : ($index === 1 ? 'fade-up-left' : 'zoom-in-left')"
+          [attr.data-aos-delay]="$index * 110"
         >
           <div class="bento-card__media">
             <img

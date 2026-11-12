@@ -1,6 +1,6 @@
 <section class="subpage-hero">
   <div class="container">
-    <div class="subpage-hero__top">
+    <div class="subpage-hero__top" data-aos="fade-down">
       <div class="status-pill status-pill--dark">
         <span class="status-dot" aria-hidden="true"></span>
         <span>{{ eyebrow() }}</span>
@@ -9,11 +9,11 @@
     </div>
 
     <h1 class="subpage-hero__title">
-      <span class="subpage-hero__muted">{{ titleMuted() }}</span>
-      <span class="subpage-hero__solid">{{ titleSolid() }}</span>
+      <span class="subpage-hero__muted" data-aos="fade-right" data-aos-delay="80">{{ titleMuted() }}</span>
+      <span class="subpage-hero__solid" data-aos="fade-left" data-aos-delay="140">{{ titleSolid() }}</span>
     </h1>
 
-    <p class="subpage-hero__subtitle">{{ subtitle() }}</p>
+    <p class="subpage-hero__subtitle" data-aos="fade-up" data-aos-delay="200">{{ subtitle() }}</p>
   </div>
   <div class="ruler-ticks subpage-hero__ruler" aria-hidden="true"></div>
 </section>
