@@ -1,0 +1,187 @@
+<app-navbar />
+@if (project(); as prj) {
+  <main>
+    <!-- 1. Editorial Project Hero -->
+    <section class="pd-hero">
+      <div class="container">
+        <div class="pd-hero__pill" data-aos="fade-down">
+          <div class="status-pill status-pill--light">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>{{ prj.category }}</span>
+          </div>
+        </div>
+
+        <div class="pd-hero__header">
+          <h1 class="pd-hero__title" data-aos="fade-right">{{ prj.title }}</h1>
+
+          <div class="pd-hero__right" data-aos="fade-left" data-aos-delay="80">
+            <p class="pd-hero__summary">{{ prj.summary }}</p>
+            <div class="pd-hero__meta">
+              {{ prj.location }} · COMPLETED {{ prj.year }} · {{ prj.contractType }}
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-hero__media" data-aos="fade-up" data-aos-delay="120">
+          <img [src]="prj.image" [alt]="prj.title" class="pd-hero__img" />
+        </div>
+
+        <div class="pd-kpis" data-aos="fade-up" data-aos-delay="160">
+          <div class="pd-kpi">
+            <div class="pd-kpi__value">
+              {{ splitMetric(prj.area).num }}<span class="pd-kpi__accent">{{ splitMetric(prj.area).unit }}</span>
+            </div>
+            <div class="pd-kpi__label">GROSS FLOOR AREA</div>
+          </div>
+          <div class="pd-kpi">
+            <div class="pd-kpi__value">
+              {{ splitMetric(prj.duration).num }}<span class="pd-kpi__accent">{{ splitMetric(prj.duration).unit }}</span>
+            </div>
+            <div class="pd-kpi__label">GROUND-BREAK TO HANDOVER</div>
+          </div>
+          <div class="pd-kpi">
+            <div class="pd-kpi__value">
+              {{ prj.value }}
+            </div>
+            <div class="pd-kpi__label">CONTRACT VALUE</div>
+          </div>
+          <div class="pd-kpi">
+            <div class="pd-kpi__value">
+              {{ prj.year }}<span class="pd-kpi__accent">·OK</span>
+            </div>
+            <div class="pd-kpi__label">COMPLETED ON SCHEDULE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sticky Details Sidebar + Case Study Editorial -->
+    <section class="pd-body">
+      <div class="container pd-body__grid">
+        <aside class="pd-sidebar" data-aos="fade-right">
+          <div class="pd-sidebar__title">PROJECT DETAILS</div>
+
+          <dl class="pd-spec-list">
+            <div class="pd-spec-row">
+              <dt>NO.</dt>
+              <dd>{{ projectIndex() }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>CLIENT</dt>
+              <dd>{{ prj.client }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>LOCATION</dt>
+              <dd>{{ prj.location }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>SECTOR</dt>
+              <dd>{{ prj.category }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>AREA</dt>
+              <dd>{{ prj.area }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>YEAR</dt>
+              <dd>{{ prj.year }}</dd>
+            </div>
+            <div class="pd-spec-row">
+              <dt>SERVICES</dt>
+              <dd>{{ prj.contractType }}</dd>
+            </div>
+          </dl>
+
+          <button type="button" class="btn-split pd-sidebar__btn" (click)="scrollToEstimate()">
+            <span>START A SIMILAR PROJECT</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </aside>
+
+        <div class="pd-editorial">
+          <p class="pd-lead" data-aos="fade-up">{{ prj.summary }}</p>
+
+          <div class="pd-section" data-aos="fade-up">
+            <h2>The challenge</h2>
+            <p>{{ prj.challenge }}</p>
+          </div>
+
+          <div class="pd-section" data-aos="fade-up">
+            <h2>Our approach</h2>
+            <p>{{ prj.solution }}</p>
+
+            <blockquote class="pd-quote">
+              <p>“{{ prj.clientQuote.quote }}”</p>
+              <footer>{{ prj.clientQuote.author }} — {{ prj.clientQuote.role }}</footer>
+            </blockquote>
+
+            <figure class="pd-inline-figure">
+              <img
+                [src]="bentoGallery()[1]"
+                [alt]="prj.title + ' field execution'"
+                class="pd-inline-figure__img"
+                loading="lazy"
+              />
+              <figcaption>Field engineering and structural execution — {{ prj.title }}.</figcaption>
+            </figure>
+          </div>
+
+          <div class="pd-section" data-aos="fade-up">
+            <h2>The outcome</h2>
+            <p>{{ prj.outcome }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Bento Progress Gallery -->
+    <section class="pd-gallery-section">
+      <div class="container">
+        <div class="pd-gallery__top" data-aos="fade-down">
+          <div class="status-pill status-pill--light">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>GALLERY</span>
+          </div>
+        </div>
+
+        <div class="pd-gallery__header">
+          <h2 class="pd-gallery__title" data-aos="fade-right">
+            <span class="pd-gallery__title-solid">From the core</span>
+            <span class="pd-gallery__title-muted">to the crown.</span>
+          </h2>
+
+          <p class="pd-gallery__copy" data-aos="fade-left" data-aos-delay="80">
+            Progress photography from ground-break to handover, shot by our site
+            team every Friday.
+          </p>
+        </div>
+
+        <div class="pd-bento-row pd-bento-row--top" data-aos="fade-up">
+          <div class="pd-bento-item">
+            <img [src]="bentoGallery()[0]" [alt]="prj.title + ' gallery 1'" loading="lazy" />
+          </div>
+          <div class="pd-bento-item">
+            <img [src]="bentoGallery()[1]" [alt]="prj.title + ' gallery 2'" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="pd-bento-row pd-bento-row--bottom" data-aos="fade-up" data-aos-delay="80">
+          <div class="pd-bento-item">
+            <img [src]="bentoGallery()[2]" [alt]="prj.title + ' gallery 3'" loading="lazy" />
+          </div>
+          <div class="pd-bento-item">
+            <img [src]="bentoGallery()[3]" [alt]="prj.title + ' gallery 4'" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <app-estimate-cta-section />
+  </main>
+}
+<app-footer />
+

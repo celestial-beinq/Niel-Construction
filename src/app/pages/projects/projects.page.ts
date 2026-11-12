@@ -1,38 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { SubpageHeroComponent } from '../../components/subpage-hero/subpage-hero.component';
-import { ProjectsSectionComponent } from '../../components/projects-section/projects-section.component';
-import { ReviewsSectionComponent } from '../../components/reviews-section/reviews-section.component';
 import { EstimateCtaSectionComponent } from '../../components/estimate-cta-section/estimate-cta-section.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { NielDataService, ProjectCategory } from '../../services/niel-data.service';
+
+type ProjectFilter = 'ALL' | ProjectCategory;
 
 @Component({
   selector: 'app-projects-page',
   standalone: true,
   imports: [
+    RouterLink,
     NavbarComponent,
-    SubpageHeroComponent,
-    ProjectsSectionComponent,
-    ReviewsSectionComponent,
     EstimateCtaSectionComponent,
     FooterComponent,
   ],
-  template: `
-    <app-navbar />
-    <main>
-      <app-subpage-hero
-        eyebrow="PROJECT PORTFOLIO"
-        titleMuted="340+ builds delivered,"
-        titleSolid="selected case studies."
-        subtitle="Commercial headquarters, high-bay industrial parks, and contemporary residential developments engineered and delivered by NIEL Construction."
-        metaRight="1.2M+ SQ FT BUILT"
-      />
-      <app-projects-section />
-      <app-reviews-section />
-      <app-estimate-cta-section />
-    </main>
-    <app-footer />
-  `,
+  templateUrl: './projects.page.html',
+  styleUrl: './projects.page.css',
 })
-export class ProjectsPage {}
+export class ProjectsPage {
+  protected readonly projects = inject(NielDataService).projects;
+  protected readonly featuredProject = this.projects[0];
 
+  protected readonly filters: ProjectFilter[] = [
+    'ALL',
+    'RESIDENTIAL',
+    'COMMERCIAL',
+    'CIVIC',
+    'INDUSTRIAL',
+  ];
+
+  protected readonly selectedFilter = signal<ProjectFilter>('ALL');
+
+  protected readonly filteredProjects = computed(() => {
+    const active = this.selectedFilter();
+    if (active === 'ALL') return this.projects;
+    return this.projects.filter((project) => project.category === active);
+  });
+
+  protected setFilter(filter: ProjectFilter): void {
+    this.selectedFilter.set(filter);
+  }
+
+  protected padIndex(value: number): string {
+    return value.toString().padStart(2, '0');
+  }
+}

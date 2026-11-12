@@ -15,7 +15,7 @@ export interface ServiceItem {
   processSteps: { step: string; title: string; detail: string }[];
 }
 
-export type ProjectCategory = 'COMMERCIAL' | 'INDUSTRIAL' | 'RESIDENTIAL';
+export type ProjectCategory = 'COMMERCIAL' | 'INDUSTRIAL' | 'RESIDENTIAL' | 'CIVIC';
 
 export interface ProjectItem {
   slug: string;
@@ -338,6 +338,102 @@ export class NielDataService {
           'The architectural concrete finish is museum-grade, and NIEL kept our investors informed at every single draw.',
         author: 'Elena Rostova',
         role: 'Managing Partner, Solis Urban Living',
+      },
+    },
+    {
+      slug: 'harbor-civic-center',
+      code: 'PRJ-031',
+      title: 'Harbor Civic Center',
+      category: 'CIVIC',
+      location: 'Victoria Island, Lagos',
+      area: '86,000 SQ FT',
+      year: '2024',
+      duration: '15 MONTHS',
+      value: '₦24.5B',
+      client: 'Lagos Civic Trust',
+      contractType: 'General Contracting',
+      image: 'images/service-design-build.jpg',
+      gallery: [
+        'images/service-design-build.jpg',
+        'images/project-commercial.jpg',
+      ],
+      summary:
+        'Board-formed architectural concrete civic atrium and public assembly complex.',
+      challenge:
+        'Curved 38-foot architectural concrete walls required zero-seam pour tolerances and acoustic isolation.',
+      solution:
+        'Our self-performed concrete team engineered custom steel-backed curved formwork and continuous monolithic pours.',
+      outcome:
+        'Delivered on budget with zero structural punch-list items.',
+      clientQuote: {
+        quote:
+          'NIEL delivered museum-grade concrete geometry on a municipal schedule.',
+        author: 'Tunde Adeyemi',
+        role: 'Director, Lagos Civic Trust',
+      },
+    },
+    {
+      slug: 'kova-arts-campus',
+      code: 'PRJ-029',
+      title: 'Kova Arts Campus',
+      category: 'CIVIC',
+      location: 'Ikoyi, Lagos',
+      area: '140,000 SQ FT',
+      year: '2024',
+      duration: '18 MONTHS',
+      value: '₦31.0B',
+      client: 'Kova Cultural Foundation',
+      contractType: 'Design-Build',
+      image: 'images/service-contracting.jpg',
+      gallery: [
+        'images/service-contracting.jpg',
+        'images/about-site-overhead.jpg',
+      ],
+      summary:
+        'Multi-pavilion concrete cultural campus with cantilevered gallery courts and daylighting.',
+      challenge:
+        'Sensitive art-grade humidity and thermal control inside exposed concrete galleries.',
+      solution:
+        'Integrated radiant slab conditioning and concealed MEP chases within the structural waffle slabs.',
+      outcome:
+        'Opened on schedule for the inaugural exhibition season.',
+      clientQuote: {
+        quote:
+          'Every gallery dimension and environmental tolerance was met to the millimeter.',
+        author: 'Amara Nwosu',
+        role: 'Chief Curator, Kova Foundation',
+      },
+    },
+    {
+      slug: 'villa-halden-residence',
+      code: 'PRJ-027',
+      title: 'Villa Halden Residence',
+      category: 'RESIDENTIAL',
+      location: 'Banana Island, Lagos',
+      area: '12,400 SQ FT',
+      year: '2025',
+      duration: '12 MONTHS',
+      value: '₦14.2B',
+      client: 'Private Client',
+      contractType: 'Turnkey General Contracting',
+      image: 'images/about-site-overhead.jpg',
+      gallery: [
+        'images/about-site-overhead.jpg',
+        'images/project-residential.jpg',
+      ],
+      summary:
+        'Private coastal residence with cantilevered terraces, structural glass, and deep pile foundations.',
+      challenge:
+        'High water-table waterfront soil required deep-pile marine foundation engineering.',
+      solution:
+        'Completed CFA piling and waterproofed basement retention ahead of monsoon season.',
+      outcome:
+        'Handed over turnkey on the exact contract completion date.',
+      clientQuote: {
+        quote:
+          'Weekly reporting and zero surprises from foundation piling to final handover.',
+        author: 'Private Client Representative',
+        role: 'Owner Rep',
       },
     },
   ];

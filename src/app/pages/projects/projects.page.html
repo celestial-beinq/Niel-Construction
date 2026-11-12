@@ -1,0 +1,194 @@
+<app-navbar />
+<main>
+  <!-- 1. Projects Hero & Featured Latest Project -->
+  <section class="projects-hero">
+    <div class="container">
+      <nav class="projects-breadcrumb" aria-label="Breadcrumb" data-aos="fade-down">
+        <a routerLink="/" class="projects-breadcrumb__link">HOME</a>
+        <span class="projects-breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="projects-breadcrumb__current" aria-current="page">PROJECTS</span>
+      </nav>
+
+      <div class="projects-hero__header">
+        <h1 class="projects-hero__title" data-aos="fade-right" data-aos-delay="60">
+          <span class="projects-hero__title-solid">Built to spec,</span>
+          <span class="projects-hero__title-muted">340 times over.</span>
+        </h1>
+
+        <div class="projects-hero__right" data-aos="fade-left" data-aos-delay="120">
+          <p class="projects-hero__copy">
+            Offices, homes, civic buildings and logistics space — each one
+            scoped, priced and scheduled before ground was broken, then handed
+            over on the date we promised.
+          </p>
+          <div class="projects-hero__stats">
+            340+ DELIVERED · 1.2M SQ FT BUILT · 98% ON TIME
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Latest Project Card -->
+      <article class="featured-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="featured-card__media">
+          <img
+            [src]="featuredProject.image"
+            [alt]="featuredProject.title"
+            class="featured-card__img"
+          />
+          <div class="ruler-ticks featured-card__ruler" aria-hidden="true"></div>
+        </div>
+
+        <div class="featured-card__body">
+          <div>
+            <div class="status-pill status-pill--dark">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>LATEST PROJECT</span>
+            </div>
+
+            <h2 class="featured-card__title">{{ featuredProject.title }}</h2>
+            <p class="featured-card__desc">{{ featuredProject.summary }}</p>
+          </div>
+
+          <div class="featured-card__footer">
+            <div class="featured-card__meta">
+              <span>{{ featuredProject.location }}</span>
+              <span>{{ featuredProject.category }}</span>
+              <span>{{ featuredProject.area }}</span>
+              <span>{{ featuredProject.year }}</span>
+            </div>
+
+            <a class="btn-split btn-split--white" [routerLink]="['/projects', featuredProject.slug]">
+              <span>VIEW PROJECT</span>
+              <span class="btn-split__arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2. All Projects Filterable Dark Grid -->
+  <section class="all-projects-section">
+    <div class="container">
+      <div class="all-projects__top" data-aos="fade-down">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>ALL PROJECTS</span>
+        </div>
+      </div>
+
+      <div class="all-projects__header">
+        <h2 class="all-projects__title" data-aos="fade-right">
+          <span class="all-projects__title-solid">Every build,</span>
+          <span class="all-projects__title-muted">one standard.</span>
+        </h2>
+
+        <p class="all-projects__copy" data-aos="fade-left" data-aos-delay="100">
+          Filter by sector to see how the same fixed-scope, fixed-schedule
+          process scales from a private villa to a 520,000 sq ft logistics hub.
+        </p>
+      </div>
+
+      <div class="filter-bar" role="tablist" aria-label="Filter projects by sector" data-aos="fade-up">
+        @for (filter of filters; track filter) {
+          <button
+            type="button"
+            role="tab"
+            class="filter-btn"
+            [class.filter-btn--active]="selectedFilter() === filter"
+            [attr.aria-selected]="selectedFilter() === filter"
+            (click)="setFilter(filter)"
+          >
+            {{ filter }}
+          </button>
+        }
+      </div>
+
+      <div class="projects-grid">
+        @for (project of filteredProjects(); track project.slug) {
+          <a
+            class="project-tile"
+            [routerLink]="['/projects', project.slug]"
+            data-aos="fade-up"
+            [attr.data-aos-delay]="$index * 60"
+          >
+            <div class="project-tile__media">
+              <img
+                [src]="project.image"
+                [alt]="project.title"
+                class="project-tile__img"
+                loading="lazy"
+              />
+              <div class="project-tile__badge">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>NO. {{ padIndex($index + 1) }}</span>
+              </div>
+            </div>
+
+            <div class="project-tile__row">
+              <h3 class="project-tile__title">{{ project.title }}</h3>
+              <span class="project-tile__year">{{ project.year }}</span>
+            </div>
+
+            <div class="project-tile__meta">
+              <span>{{ project.location }}</span>
+              <span>{{ project.category }}</span>
+              <span>{{ project.area }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Track Record KPI Strip -->
+  <section class="track-record-section">
+    <div class="container">
+      <div class="track-record__header" data-aos="fade-up">
+        <div>
+          <div class="status-pill status-pill--light">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>TRACK RECORD</span>
+          </div>
+        </div>
+
+        <h2 class="track-record__heading">
+          <span class="track-record__heading-solid">Twenty-eight years of handovers,</span>
+          <span class="track-record__heading-muted">measured the same way every week.</span>
+        </h2>
+      </div>
+
+      <div class="track-record__divider"></div>
+
+      <div class="track-record__grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="track-stat">
+          <div class="track-stat__label">PROJECTS DELIVERED</div>
+          <div class="track-stat__value">340<span class="track-stat__accent">+</span></div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat__label">ON-TIME HANDOVER</div>
+          <div class="track-stat__value">98<span class="track-stat__accent">%</span></div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat__label">SQ FT BUILT</div>
+          <div class="track-stat__value">1.2<span class="track-stat__accent">M</span></div>
+        </div>
+        <div class="track-stat">
+          <div class="track-stat__label">YEARS BUILDING</div>
+          <div class="track-stat__value">28<span class="track-stat__accent">+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Request an Estimate -->
+  <app-estimate-cta-section />
+</main>
+
+<!-- 5. Footer -->
+<app-footer />
+
