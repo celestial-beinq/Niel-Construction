@@ -1,0 +1,235 @@
+<app-navbar />
+<main>
+  <!-- 1. Editorial Contact Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <nav class="contact-breadcrumb" aria-label="Breadcrumb" data-aos="fade-down">
+        <a routerLink="/" class="contact-breadcrumb__link">HOME</a>
+        <span class="contact-breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="contact-breadcrumb__current" aria-current="page">CONTACT</span>
+      </nav>
+
+      <div class="contact-hero__content">
+        <h1 class="contact-hero__title" data-aos="fade-right">Let's talk</h1>
+        <p class="contact-hero__subtitle" data-aos="fade-up" data-aos-delay="80">
+          One contact form for everything — new builds, renovations, or a rough
+          idea you're still shaping. We read every request personally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Dark Form & Contact Sidebar -->
+  <section id="contact-form" class="contact-form-section">
+    <div class="container contact-form-grid">
+      <!-- Left Info & Director Column -->
+      <div class="contact-info" data-aos="fade-right">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>01 / GET IN TOUCH</span>
+        </div>
+
+        <h2 class="contact-info__title">Have a project?</h2>
+        <p class="contact-info__copy">
+          We'll review your scope and get back to you within one business day.
+        </p>
+
+        <div class="director-card">
+          <img
+            src="images/director-hayes.jpg"
+            alt="Engr. Tunde Adebayo, Project Director at NIEL Construction"
+            class="director-card__avatar"
+          />
+          <div class="director-card__meta">
+            <div class="director-card__name">Engr. Tunde Adebayo</div>
+            <div class="director-card__role">Founder &amp; Project Director</div>
+            <div class="director-card__links">
+              <a href="tel:+2348095550198">+234 809 555 0198</a>
+              <a href="mailto:estimates@nielconstruction.com">estimates&#64;nielconstruction.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-hours">
+          <div>Monday – Saturday, 06:30 – 18:30</div>
+          <div>Plot 14 Adeola Odeku St, Victoria Island, Lagos</div>
+        </div>
+      </div>
+
+      <!-- Right Estimate Request Form -->
+      <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="100">
+        @if (submitted()) {
+          <div class="form-success">
+            <div class="status-pill status-pill--dark">
+              <span class="status-dot status-dot--green" aria-hidden="true"></span>
+              <span>REQUEST RECEIVED</span>
+            </div>
+            <h3>Estimate brief logged</h3>
+            <p>
+              Thank you, {{ form.fullName }}. Engr. Tunde Adebayo and the NIEL
+              pre-construction team have received your {{ form.projectType }}
+              request and will reply to <strong>{{ form.email }}</strong> within
+              one business day.
+            </p>
+            <button type="button" class="submit-btn" (click)="resetForm()">
+              Send another request
+            </button>
+          </div>
+        } @else {
+          <form class="estimate-form" (ngSubmit)="submitRequest()">
+            <div class="form-row">
+              <label class="field">
+                <span class="field__label">Full name *</span>
+                <input
+                  type="text"
+                  name="fullName"
+                  [(ngModel)]="form.fullName"
+                  required
+                  placeholder="Jane Cooper"
+                />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Email *</span>
+                <input
+                  type="email"
+                  name="email"
+                  [(ngModel)]="form.email"
+                  required
+                  placeholder="jane@company.com"
+                />
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label class="field">
+                <span class="field__label">Project type *</span>
+                <select name="projectType" [(ngModel)]="form.projectType" required>
+                  <option value="" disabled>Select a type</option>
+                  @for (type of projectTypes; track type) {
+                    <option [value]="type">{{ type }}</option>
+                  }
+                </select>
+              </label>
+
+              <label class="field">
+                <span class="field__label">Budget</span>
+                <select name="budget" [(ngModel)]="form.budget">
+                  <option value="">Select a range</option>
+                  @for (range of budgets; track range) {
+                    <option [value]="range">{{ range }}</option>
+                  }
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field__label">Planned start</span>
+              <select name="plannedStart" [(ngModel)]="form.plannedStart">
+                <option value="">Select a quarter</option>
+                @for (q of quarters; track q) {
+                  <option [value]="q">{{ q }}</option>
+                }
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">About the project</span>
+              <textarea
+                name="about"
+                rows="4"
+                [(ngModel)]="form.about"
+                placeholder="Site location, size, anything we should know…"
+              ></textarea>
+            </label>
+
+            <button type="submit" class="submit-btn">Send Request</button>
+
+            <p class="form-consent">
+              By submitting this form you agree to our Privacy Policy.
+            </p>
+          </form>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Offices Section -->
+  <section class="offices-section">
+    <div class="container">
+      <div class="offices-header" data-aos="fade-up">
+        <div class="status-pill status-pill--light">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>02 / OFFICES</span>
+        </div>
+
+        <h2 class="offices-title">
+          <span class="offices-title__solid">Three offices,</span>
+          <span class="offices-title__muted">same standards.</span>
+        </h2>
+
+        <p class="offices-subtitle">
+          Every office runs the same site standards and direct reporting.
+        </p>
+      </div>
+
+      <div class="offices-grid">
+        @for (office of offices; track office.city) {
+          <article class="office-card" data-aos="fade-up" [attr.data-aos-delay]="$index * 80">
+            <div class="office-card__tag">{{ office.label }}</div>
+            <h3 class="office-card__city">{{ office.city }}</h3>
+            <p class="office-card__address">{{ office.address }}</p>
+            <div class="office-card__contact">
+              <a [href]="'tel:' + office.phoneHref">{{ office.phone }}</a>
+              <a [href]="'mailto:' + office.email">{{ office.email }}</a>
+            </div>
+            <div class="office-card__hours">{{ office.hours }}</div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ Accordion Section -->
+  <section class="contact-faq-section">
+    <div class="container contact-faq-grid">
+      <div class="contact-faq-intro" data-aos="fade-right">
+        <div class="status-pill status-pill--light">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>03 / FAQ</span>
+        </div>
+
+        <h2 class="contact-faq-title">
+          <span class="contact-faq-title__solid">Good to know,</span>
+          <span class="contact-faq-title__muted">before we talk.</span>
+        </h2>
+
+        <p class="contact-faq-subtitle">
+          The short answers to what most clients ask first.
+        </p>
+      </div>
+
+      <div class="contact-faq-list" data-aos="fade-left">
+        @for (item of faqs; track item.question) {
+          <div class="faq-item" [class.faq-item--open]="openFaq() === $index">
+            <button
+              type="button"
+              class="faq-trigger"
+              [attr.aria-expanded]="openFaq() === $index"
+              (click)="toggleFaq($index)"
+            >
+              <h4>{{ item.question }}</h4>
+              <span class="faq-icon" aria-hidden="true">{{ openFaq() === $index ? '−' : '+' }}</span>
+            </button>
+            @if (openFaq() === $index) {
+              <p class="faq-answer">{{ item.answer }}</p>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</main>
+<app-footer />
+

@@ -352,10 +352,10 @@ export class NielDataService {
       value: '₦24.5B',
       client: 'Lagos Civic Trust',
       contractType: 'General Contracting',
-      image: 'images/service-design-build.jpg',
+      image: 'images/project-civic-1.jpg',
       gallery: [
-        'images/service-design-build.jpg',
-        'images/project-commercial.jpg',
+        'images/project-civic-1.jpg',
+        'images/milestone-4.jpg',
       ],
       summary:
         'Board-formed architectural concrete civic atrium and public assembly complex.',
@@ -384,10 +384,10 @@ export class NielDataService {
       value: '₦31.0B',
       client: 'Kova Cultural Foundation',
       contractType: 'Design-Build',
-      image: 'images/service-contracting.jpg',
+      image: 'images/project-civic-2.jpg',
       gallery: [
-        'images/service-contracting.jpg',
-        'images/about-site-overhead.jpg',
+        'images/project-civic-2.jpg',
+        'images/milestone-2.jpg',
       ],
       summary:
         'Multi-pavilion concrete cultural campus with cantilevered gallery courts and daylighting.',
@@ -416,10 +416,10 @@ export class NielDataService {
       value: '₦14.2B',
       client: 'Private Client',
       contractType: 'Turnkey General Contracting',
-      image: 'images/about-site-overhead.jpg',
+      image: 'images/project-villa.jpg',
       gallery: [
-        'images/about-site-overhead.jpg',
-        'images/project-residential.jpg',
+        'images/project-villa.jpg',
+        'images/milestone-1.jpg',
       ],
       summary:
         'Private coastal residence with cantilevered terraces, structural glass, and deep pile foundations.',
@@ -447,7 +447,7 @@ export class NielDataService {
       excerpt:
         '420,000 sq ft of high-tolerance precast tilt-up completed 19 days ahead of baseline schedule with zero recordable incidents.',
       readTime: '3 MIN READ',
-      author: 'Daniel Hayes',
+      author: 'Engr. Tunde Adebayo',
       authorRole: 'Project Director, NIEL Construction',
       image: 'images/project-industrial.jpg',
       paragraphs: [
@@ -499,7 +499,7 @@ export class NielDataService {
       metric: 'FIRST 12 PROJECTS',
       description:
         'Alexandra Reed opens NIEL Construction with a crew of eleven, delivering office fit-outs in Midtown Manhattan.',
-      image: 'images/service-renovation.jpg',
+      image: 'images/milestone-1.jpg',
     },
     {
       year: '2006',
@@ -507,7 +507,7 @@ export class NielDataService {
       metric: '100+ BUILDS',
       description:
         'Expanded into full-service design-build and self-performed structural concrete to control critical-path schedules.',
-      image: 'images/service-contracting.jpg',
+      image: 'images/milestone-2.jpg',
     },
     {
       year: '2012',
@@ -515,7 +515,7 @@ export class NielDataService {
       metric: '180+ BUILDS',
       description:
         'Launched our civic and institutional division, delivering multi-story campuses and municipal infrastructure.',
-      image: 'images/project-commercial.jpg',
+      image: 'images/milestone-3.jpg',
     },
     {
       year: '2017',
@@ -523,7 +523,7 @@ export class NielDataService {
       metric: '0.45 EMR BENCHMARK',
       description:
         'Formalized enterprise quality and zero-incident safety systems across commercial, residential, and industrial divisions.',
-      image: 'images/project-industrial.jpg',
+      image: 'images/milestone-4.jpg',
     },
     {
       year: '2021',
@@ -531,7 +531,7 @@ export class NielDataService {
       metric: '1.0M+ SQ FT MODELED',
       description:
         'Integrated federated 3D clash detection and open-book cost telemetry into every pre-construction engagement.',
-      image: 'images/service-precon.jpg',
+      image: 'images/milestone-5.jpg',
     },
     {
       year: '2024',
@@ -539,7 +539,7 @@ export class NielDataService {
       metric: '300+ BUILDS',
       description:
         'Completed landmark residential towers and mixed-use developments with 98% on-time handover reliability.',
-      image: 'images/project-residential.jpg',
+      image: 'images/about-hero.jpg',
     },
     {
       year: '2026',
@@ -547,7 +547,7 @@ export class NielDataService {
       metric: '98% ON-TIME HANDOVER',
       description:
         'Operating across commercial headquarters, high-bay industrial parks, and landmark multi-family developments.',
-      image: 'images/about-site-overhead.jpg',
+      image: 'images/hero-construction.jpg',
     },
   ];
 

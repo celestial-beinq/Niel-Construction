@@ -15,9 +15,9 @@ export class NavbarComponent {
   protected readonly navItems = [
     { path: '/', label: 'HOME', badge: null, exact: true },
     { path: '/about', label: 'ABOUT', badge: null, exact: false },
-    { path: '/services', label: 'SERVICES', badge: '04', exact: false },
+    { path: '/services', label: 'SERVICES', badge: '', exact: false },
     { path: '/projects', label: 'PROJECTS', badge: null, exact: false },
-    { path: '/news', label: 'NEWS', badge: null, exact: false },
+    // { path: '/news', label: 'NEWS', badge: null, exact: false },
   ];
 
   @HostListener('window:scroll')
