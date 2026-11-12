@@ -8,7 +8,6 @@ import { ProjectsSectionComponent } from '../../components/projects-section/proj
 import { HowWeBuildComponent } from '../../components/how-we-build/how-we-build.component';
 import { ReviewsSectionComponent } from '../../components/reviews-section/reviews-section.component';
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component';
-import { NewsSectionComponent } from '../../components/news-section/news-section.component';
 import { EstimateCtaSectionComponent } from '../../components/estimate-cta-section/estimate-cta-section.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
@@ -25,7 +24,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
     HowWeBuildComponent,
     ReviewsSectionComponent,
     FaqSectionComponent,
-    NewsSectionComponent,
     EstimateCtaSectionComponent,
     FooterComponent,
   ],

@@ -1,58 +1,102 @@
 <footer class="footer">
-  <div class="ruler-ticks" aria-hidden="true"></div>
+  <!-- Top CTA Band -->
+  <div class="container footer-cta-band" data-aos="fade-up">
+    <h2 class="footer-cta-title">
+      <span class="footer-cta-title__solid">Built to last.</span>
+      <span class="footer-cta-title__muted">Planned from day one.</span>
+    </h2>
 
+    <div class="footer-cta-actions">
+      <div class="footer-booking-status">
+        <span class="status-dot status-dot--green" aria-hidden="true"></span>
+        <span>BOOKING PROJECTS FOR 2027</span>
+      </div>
+      <a routerLink="/contact" class="btn-footer-estimate">
+        <span>GET AN ESTIMATE</span>
+        <span class="btn-footer-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container footer-ruler">
+    <div class="ruler-ticks" aria-hidden="true"></div>
+  </div>
+
+  <!-- 4-Column Links & Info -->
   <div class="container footer-inner">
     <div class="footer-brand" data-aos="fade-right">
       <a class="footer-logo" routerLink="/">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 2L20 6.5V11.5L12 7L4 11.5V6.5L12 2Z" fill="#FF3B1D"/>
-          <path d="M4 12.5L12 17L20 12.5V17.5L12 22L4 17.5V12.5Z" fill="#FFFFFF"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2L20 6.5V11.5L12 7L4 11.5V6.5L12 2Z" fill="#FF3B1D" />
+          <path d="M4 12.5L12 17L20 12.5V17.5L12 22L4 17.5V12.5Z" fill="#FFFFFF" />
         </svg>
-        <span>NIEL CONSTRUCTION</span>
+        <span>NIEL</span>
       </a>
       <p class="footer-tagline">
-        General contracting, design-build, and pre-construction for commercial,
-        residential, and industrial projects — delivered on schedule since 1998.
+        General contractor building commercial, residential and industrial
+        projects with fixed scope, fixed schedule and full accountability.
       </p>
     </div>
 
     <div class="footer-columns">
       <div class="footer-col" data-aos="fade-up" data-aos-delay="80">
-        <div class="footer-col__title">NAVIGATION</div>
+        <div class="footer-col__title">PAGES</div>
         <ul>
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/services">Services (04)</a></li>
           <li><a routerLink="/projects">Projects</a></li>
-          <li><a routerLink="/news">News</a></li>
-          <li><a routerLink="/contact">Get Estimate</a></li>
+          <li><a routerLink="/services">Services</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-col" data-aos="fade-up" data-aos-delay="160">
-        <div class="footer-col__title">HEADQUARTERS</div>
+      <div class="footer-col" data-aos="fade-up" data-aos-delay="140">
+        <div class="footer-col__title">SERVICES</div>
         <ul>
-          <li>Plot 14 Adeola Odeku St, Victoria Island</li>
-          <li>Lagos, Nigeria</li>
-          <li>estimates&#64;nielconstruction.com</li>
-          <li>+234 809 555 0198</li>
+          <li><a routerLink="/services">General Contracting</a></li>
+          <li><a routerLink="/services">Design-Build</a></li>
+          <li><a routerLink="/services">Pre-construction</a></li>
+          <li><a routerLink="/services">Renovation &amp; Fit-out</a></li>
         </ul>
       </div>
 
-      <div class="footer-col" data-aos="fade-up" data-aos-delay="240">
-        <div class="footer-col__title">CERTIFICATIONS</div>
+      <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+        <div class="footer-col__title">OFFICE</div>
         <ul>
-          <li>ISO 9001 Quality Management</li>
-          <li>ISO 45001 Occupational Safety</li>
-          <li>LEED Accredited General Contractor</li>
-          <li>Licensed &amp; Bonded Since 1998</li>
+          <li>Plot 14 Adeola Odeku St, Victoria Island, Lagos</li>
+          <li class="footer-office-gap"><a href="tel:+2348095550198">+234 809 555 0198</a></li>
+          <li><a href="mailto:estimates@nielconstruction.com">estimates&#64;nielconstruction.com</a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="container footer-bottom" data-aos="fade">
-    <span>&copy; {{ currentYear }} NIEL CONSTRUCTION. ALL RIGHTS RESERVED.</span>
-    <span>EST. 1998 · 340+ PROJECTS DELIVERED</span>
+  <!-- Giant Watermark Band -->
+  <div class="container footer-watermark" aria-hidden="true">
+    <svg class="footer-watermark-icon" viewBox="0 0 24 24" fill="none">
+      <path d="M12 2L20 6.5V11.5L12 7L4 11.5V6.5L12 2Z" fill="currentColor" />
+      <path d="M4 12.5L12 17L20 12.5V17.5L12 22L4 17.5V12.5Z" fill="currentColor" />
+    </svg>
+    <span class="footer-watermark-text">NIEL</span>
+  </div>
+
+  <!-- Bottom Legal Bar -->
+  <div class="footer-bottom-wrap">
+    <div class="container footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; {{ currentYear }} NIEL CONSTRUCTION</span>
+        <span>EST. 1998</span>
+      </div>
+
+      <div class="footer-bottom-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+      </div>
+
+      <button type="button" class="footer-back-top" (click)="scrollToTop()">
+        BACK TO TOP ↑
+      </button>
+    </div>
   </div>
 </footer>

@@ -62,6 +62,7 @@ export interface TimelineMilestone {
   title: string;
   metric: string;
   description: string;
+  image: string;
 }
 
 export interface ClientReview {
@@ -398,38 +399,59 @@ export class NielDataService {
   readonly timeline: TimelineMilestone[] = [
     {
       year: '1998',
-      title: 'Foundation in Commercial Contracting',
+      title: 'Founded in New York',
       metric: 'FIRST 12 PROJECTS',
       description:
-        'Founded with a single structural crew focused on mid-rise commercial interiors and light industrial builds.',
+        'Alexandra Reed opens NIEL Construction with a crew of eleven, delivering office fit-outs in Midtown Manhattan.',
+      image: 'images/service-renovation.jpg',
     },
     {
       year: '2006',
-      title: 'Launch of Self-Performed Concrete & Design-Build',
+      title: 'Self-Performed Concrete & Design-Build',
       metric: '100+ BUILDS',
       description:
         'Expanded into full-service design-build and self-performed structural concrete to control critical-path schedules.',
+      image: 'images/service-contracting.jpg',
     },
     {
-      year: '2014',
+      year: '2012',
+      title: 'Institutional & Civic Expansion',
+      metric: '180+ BUILDS',
+      description:
+        'Launched our civic and institutional division, delivering multi-story campuses and municipal infrastructure.',
+      image: 'images/project-commercial.jpg',
+    },
+    {
+      year: '2017',
       title: 'ISO 9001 & 45001 Dual Certification',
       metric: '0.45 EMR BENCHMARK',
       description:
-        'Formalized enterprise quality and zero-incident safety systems across commercial, residential, and heavy civil divisions.',
+        'Formalized enterprise quality and zero-incident safety systems across commercial, residential, and industrial divisions.',
+      image: 'images/project-industrial.jpg',
     },
     {
-      year: '2020',
+      year: '2021',
       title: 'BIM / VDC Pre-Construction Lab',
       metric: '1.0M+ SQ FT MODELED',
       description:
         'Integrated federated 3D clash detection and open-book cost telemetry into every pre-construction engagement.',
+      image: 'images/service-precon.jpg',
+    },
+    {
+      year: '2024',
+      title: 'Multi-Family & High-Rise Division',
+      metric: '300+ BUILDS',
+      description:
+        'Completed landmark residential towers and mixed-use developments with 98% on-time handover reliability.',
+      image: 'images/project-residential.jpg',
     },
     {
       year: '2026',
-      title: '340+ Projects & ₦1.1T Delivered',
+      title: '340+ Projects & Zero Shortcuts',
       metric: '98% ON-TIME HANDOVER',
       description:
         'Operating across commercial headquarters, high-bay industrial parks, and landmark multi-family developments.',
+      image: 'images/about-site-overhead.jpg',
     },
   ];
 

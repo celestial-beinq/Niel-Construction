@@ -13,14 +13,21 @@ export class EstimateCtaSectionComponent {
 
   protected form = {
     name: '',
-    company: '',
     email: '',
-    sector: 'Commercial',
-    budget: '₦5B – ₦20B',
-    startDate: 'Q1 2027',
-    area: '',
+    sector: '',
+    budget: '',
+    startDate: '',
     notes: '',
   };
+
+  protected readonly sectors = [
+    'Commercial Construction',
+    'Industrial & Logistics',
+    'Multi-Family Residential',
+    'Design-Build',
+    'Pre-Construction / BIM',
+    'Renovation & Fit-Out',
+  ];
 
   protected readonly budgets = [
     '₦1.5B – ₦5B',
@@ -29,11 +36,12 @@ export class EstimateCtaSectionComponent {
     '₦50B+',
   ];
 
-  protected readonly sectors = [
-    'Commercial',
-    'Industrial & Logistics',
-    'Multi-Family Residential',
-    'Pre-Construction / BIM',
+  protected readonly quarters = [
+    'Q3 2026',
+    'Q4 2026',
+    'Q1 2027',
+    'Q2 2027',
+    'Q3 2027',
   ];
 
   protected submitRequest(): void {
@@ -47,14 +55,11 @@ export class EstimateCtaSectionComponent {
     this.submitted.set(false);
     this.form = {
       name: '',
-      company: '',
       email: '',
-      sector: 'Commercial',
-      budget: '₦5B – ₦20B',
-      startDate: 'Q1 2027',
-      area: '',
+      sector: '',
+      budget: '',
+      startDate: '',
       notes: '',
     };
   }
 }
-

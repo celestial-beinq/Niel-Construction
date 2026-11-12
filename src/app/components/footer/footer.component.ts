@@ -10,4 +10,10 @@ import { RouterLink } from '@angular/router';
 })
 export class FooterComponent {
   protected readonly currentYear = 2026;
+
+  protected scrollToTop(): void {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
