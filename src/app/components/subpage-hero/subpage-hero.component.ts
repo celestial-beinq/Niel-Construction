@@ -13,3 +13,4 @@ export class SubpageHeroComponent {
   readonly subtitle = input.required<string>();
   readonly metaRight = input<string>('NIEL CONSTRUCTION // EST. 1998');
 }
+

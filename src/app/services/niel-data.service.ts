@@ -492,3 +492,4 @@ export class NielDataService {
     return this.articles.find((a) => a.slug === slug);
   }
 }
+

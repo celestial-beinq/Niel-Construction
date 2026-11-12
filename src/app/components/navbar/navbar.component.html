@@ -1,7 +1,7 @@
 <header class="navbar-wrapper" [class.navbar-wrapper--scrolled]="scrolled()">
   <div class="container navbar-inner">
     <!-- Brand Mark -->
-    <a class="brand-badge" href="#home" (click)="$event.preventDefault(); scrollTo('home')" aria-label="NIEL Construction Home">
+    <a class="brand-badge" routerLink="/" (click)="closeMobileMenu()" aria-label="NIEL Construction Home">
       <svg class="brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2L20 6.5V11.5L12 7L4 11.5V6.5L12 2Z" fill="#FF3B1D"/>
         <path d="M4 12.5L12 17L20 12.5V17.5L12 22L4 17.5V12.5Z" fill="#FFFFFF"/>
@@ -13,13 +13,13 @@
     <!-- Desktop Navigation Pill -->
     <nav class="nav-dock" aria-label="Primary navigation">
       <ul class="nav-links">
-        @for (item of navItems; track item.id) {
+        @for (item of navItems; track item.path) {
           <li>
             <a
               class="nav-link"
-              [class.nav-link--active]="activeSection() === item.id"
-              [href]="'#' + item.id"
-              (click)="$event.preventDefault(); scrollTo(item.id)"
+              [routerLink]="item.path"
+              routerLinkActive="nav-link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
             >
               <span>{{ item.label }}</span>
               @if (item.badge) {
@@ -30,11 +30,7 @@
         }
       </ul>
 
-      <a
-        class="btn-split btn-split--accent nav-cta"
-        href="#estimate"
-        (click)="$event.preventDefault(); scrollTo('estimate')"
-      >
+      <a class="btn-split btn-split--accent nav-cta" routerLink="/contact">
         <span>GET ESTIMATE</span>
         <span class="btn-split__arrow" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -61,13 +57,14 @@
   @if (mobileMenuOpen()) {
     <div class="mobile-drawer">
       <ul class="mobile-drawer__links">
-        @for (item of navItems; track item.id) {
+        @for (item of navItems; track item.path) {
           <li>
             <a
               class="mobile-drawer__link"
-              [class.mobile-drawer__link--active]="activeSection() === item.id"
-              [href]="'#' + item.id"
-              (click)="$event.preventDefault(); scrollTo(item.id)"
+              [routerLink]="item.path"
+              routerLinkActive="mobile-drawer__link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
+              (click)="closeMobileMenu()"
             >
               <span>{{ item.label }}</span>
               @if (item.badge) {
@@ -79,8 +76,8 @@
       </ul>
       <a
         class="btn-split btn-split--accent mobile-drawer__cta"
-        href="#estimate"
-        (click)="$event.preventDefault(); scrollTo('estimate')"
+        routerLink="/contact"
+        (click)="closeMobileMenu()"
       >
         <span>GET ESTIMATE</span>
         <span class="btn-split__arrow" aria-hidden="true">
@@ -92,4 +89,3 @@
     </div>
   }
 </header>
-

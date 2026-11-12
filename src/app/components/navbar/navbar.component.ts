@@ -1,52 +1,35 @@
 import { Component, HostListener, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  protected readonly activeSection = signal<string>('home');
   protected readonly mobileMenuOpen = signal<boolean>(false);
   protected readonly scrolled = signal<boolean>(false);
 
   protected readonly navItems = [
-    { id: 'home', label: 'HOME', badge: null },
-    { id: 'about', label: 'ABOUT', badge: null },
-    { id: 'services', label: 'SERVICES', badge: '04' },
-    { id: 'projects', label: 'PROJECTS', badge: null },
-    { id: 'news', label: 'NEWS', badge: null },
+    { path: '/', label: 'HOME', badge: null, exact: true },
+    { path: '/about', label: 'ABOUT', badge: null, exact: false },
+    { path: '/services', label: 'SERVICES', badge: '04', exact: false },
+    { path: '/projects', label: 'PROJECTS', badge: null, exact: false },
+    { path: '/news', label: 'NEWS', badge: null, exact: false },
   ];
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
     this.scrolled.set(window.scrollY > 40);
-
-    const sections = ['home', 'about', 'services', 'projects', 'news', 'estimate'];
-    for (const id of [...sections].reverse()) {
-      const el = document.getElementById(id);
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= 160) {
-          this.activeSection.set(id === 'estimate' ? 'home' : id);
-          break;
-        }
-      }
-    }
   }
 
-  protected scrollTo(id: string): void {
-    this.activeSection.set(id === 'estimate' ? this.activeSection() : id);
+  protected closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 
   protected toggleMobileMenu(): void {
     this.mobileMenuOpen.update((open) => !open);
   }
 }
-

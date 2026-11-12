@@ -30,7 +30,7 @@
           </div>
 
           <h3 class="service-card__title">{{ service.title }}</h3>
-          <p class="service-card__desc">{{ service.description }}</p>
+          <p class="service-card__desc">{{ service.shortDesc }}</p>
 
           <ul class="service-card__list">
             @for (item of service.deliverables; track item) {
@@ -41,18 +41,17 @@
             }
           </ul>
 
-          <button
-            type="button"
+          <a
             class="service-card__action"
-            (click)="scrollToEstimate()"
+            [routerLink]="['/services', service.slug]"
           >
-            <span>REQUEST SCOPE</span>
+            <span>VIEW SERVICE SPEC</span>
             <span class="service-card__arrow" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-          </button>
+          </a>
         </article>
       }
     </div>

@@ -146,3 +146,4 @@ import { NielDataService } from '../../services/niel-data.service';
 export class ReviewsSectionComponent {
   protected readonly reviews = inject(NielDataService).reviews;
 }
+

@@ -90,3 +90,4 @@ import { NielDataService } from '../../services/niel-data.service';
 export class LogoMarqueeComponent {
   protected readonly logos = inject(NielDataService).partnerLogos;
 }
+

@@ -34,7 +34,7 @@
 
     <div class="projects-grid">
       @for (project of filteredProjects(); track project.code) {
-        <article class="project-card">
+        <a class="project-card" [routerLink]="['/projects', project.slug]">
           <div class="project-card__media">
             <img
               [src]="project.image"
@@ -55,7 +55,7 @@
             <h3 class="project-card__title">{{ project.title }}</h3>
             <p class="project-card__summary">{{ project.summary }}</p>
           </div>
-        </article>
+        </a>
       }
     </div>
   </div>

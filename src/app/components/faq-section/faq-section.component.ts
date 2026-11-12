@@ -173,3 +173,4 @@ export class FaqSectionComponent {
     this.openIndex.update((current) => (current === index ? null : index));
   }
 }
+
