@@ -5,76 +5,113 @@ import { NielDataService } from '../../services/niel-data.service';
   selector: 'app-logo-marquee',
   standalone: true,
   template: `
-    <section class="marquee-band" aria-label="Trusted development partners">
+    <section class="marquee-band" aria-label="Trusted by leading developers">
       <div class="container marquee-label-row">
-        <span class="marquee-label">TRUSTED BY INSTITUTIONAL DEVELOPERS &amp; ARCHITECTS</span>
+        <span class="marquee-label">TRUSTED BY LEADING DEVELOPERS</span>
       </div>
-      <div class="marquee-viewport">
-        <div class="marquee-track">
-          @for (logo of logos; track $index) {
-            <span class="marquee-item">
-              <span class="marquee-dot" aria-hidden="true"></span>
-              <span>{{ logo }}</span>
-            </span>
-          }
-          @for (logo of logos; track 'dup-' + $index) {
-            <span class="marquee-item" aria-hidden="true">
-              <span class="marquee-dot"></span>
-              <span>{{ logo }}</span>
-            </span>
-          }
+      <div class="container">
+        <div class="marquee-viewport">
+          <div class="marquee-track">
+            @for (logo of logos; track $index) {
+              <div class="marquee-cell" [attr.data-style]="logo.style">
+                <span>{{ logo.name }}</span>
+              </div>
+            }
+            @for (logo of logos; track 'dup-' + $index) {
+              <div class="marquee-cell" [attr.data-style]="logo.style" aria-hidden="true">
+                <span>{{ logo.name }}</span>
+              </div>
+            }
+          </div>
         </div>
       </div>
     </section>
   `,
   styles: `
     .marquee-band {
-      background: #090d10;
-      border-bottom: 1px solid var(--niel-border-dark);
-      padding-block: 1.5rem;
+      background: #ffffff;
+      color: var(--niel-text-dark);
+      padding-block: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 3vw, 2.75rem);
       overflow: hidden;
     }
 
     .marquee-label-row {
-      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
 
     .marquee-label {
+      display: inline-block;
+      padding: 0.4375rem 0.875rem;
+      border-radius: var(--radius-sm);
+      background: #f3f4f6;
+      border: 1px solid #e7e9ec;
       font-family: var(--font-mono);
       font-size: 0.65625rem;
+      font-weight: 500;
       letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.45);
+      color: #111827;
     }
 
     .marquee-viewport {
       overflow: hidden;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      border-top: 1px solid #eaecef;
+      border-bottom: 1px solid #eaecef;
+      mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
     }
 
     .marquee-track {
       display: flex;
       width: max-content;
-      gap: 3rem;
-      animation: niel-marquee 32s linear infinite;
+      animation: niel-marquee 30s linear infinite;
     }
 
-    .marquee-item {
-      display: inline-flex;
+    .marquee-cell {
+      display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.72);
-      white-space: nowrap;
+      justify-content: center;
+      min-width: 215px;
+      height: 82px;
+      padding-inline: 2rem;
+      border-right: 1px solid #eaecef;
+      color: #9ca3af;
+      font-size: 1.0625rem;
+      user-select: none;
+      transition: color 0.2s ease;
     }
 
-    .marquee-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 1px;
-      background: var(--niel-accent);
+    .marquee-cell:hover {
+      color: #374151;
+    }
+
+    .marquee-cell[data-style='serif'] {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+    }
+
+    .marquee-cell[data-style='bold'] {
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .marquee-cell[data-style='mono'] {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .marquee-cell[data-style='caps'] {
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.08em;
+    }
+
+    .marquee-cell[data-style='sans'] {
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
     @keyframes niel-marquee {
@@ -90,4 +127,3 @@ import { NielDataService } from '../../services/niel-data.service';
 export class LogoMarqueeComponent {
   protected readonly logos = inject(NielDataService).partnerLogos;
 }
-

@@ -5,6 +5,7 @@ export interface ServiceItem {
   index: string;
   tag: string;
   title: string;
+  image: string;
   shortDesc: string;
   fullDesc: string;
   deliverables: string[];
@@ -79,24 +80,23 @@ export interface FaqItem {
 @Injectable({ providedIn: 'root' })
 export class NielDataService {
   readonly partnerLogos = [
-    'MERIDIAN GROUP',
-    'NORTHPORT LOGISTICS',
-    'SOLIS CAPITAL',
-    'VANGUARD STRUCTURAL',
-    'APEX COMMERCIAL',
-    'IRONWOOD CIVIL',
-    'KESTREL ARCHITECTS',
-    'METRO INFRASTRUCTURE',
+    { name: 'Gateway', style: 'serif' },
+    { name: 'orbit&co', style: 'bold' },
+    { name: 'VANTA-BUILD', style: 'mono' },
+    { name: 'NORTHFIELD', style: 'caps' },
+    { name: 'Arcline', style: 'serif' },
+    { name: 'meridian°', style: 'sans' },
   ];
 
   readonly services: ServiceItem[] = [
     {
       slug: 'general-contracting',
       index: '01',
-      tag: 'EXECUTION',
+      tag: 'BUILD',
       title: 'General Contracting',
+      image: 'images/service-contracting.jpg',
       shortDesc:
-        'Full-scope field management, self-performed concrete and structural work, and vetted subcontractor coordination under a single GMP contract.',
+        'Full site management, trades and safety under one contract.',
       fullDesc:
         'NIEL Construction acts as your single point of field accountability from mobilization to certificate of occupancy. Our superintendents run tight weekly look-ahead schedules, open-book cost ledgers, and ISO 45001 safety audits on every active site.',
       deliverables: [
@@ -129,10 +129,11 @@ export class NielDataService {
     {
       slug: 'design-build',
       index: '02',
-      tag: 'INTEGRATED',
+      tag: 'DESIGN',
       title: 'Design-Build',
+      image: 'images/service-design-build.jpg',
       shortDesc:
-        'Unified architectural, structural, and construction leadership that compresses project timelines by up to 30% with zero finger-pointing.',
+        'Architects and builders on one team, one fixed price.',
       fullDesc:
         'By uniting design and field engineering under one NIEL contract, we overlap permitting, structural procurement, and early site work—eliminating change-order friction and accelerating time-to-revenue.',
       deliverables: [
@@ -165,10 +166,11 @@ export class NielDataService {
     {
       slug: 'pre-construction',
       index: '03',
-      tag: 'PLANNING',
-      title: 'Pre-Construction',
+      tag: 'PLAN',
+      title: 'Pre-construction',
+      image: 'images/service-precon.jpg',
       shortDesc:
-        'Early-stage feasibility, 3D BIM clash detection, constructability reviews, and line-item cost modeling before mobilization.',
+        'Feasibility, estimating and scheduling before you commit.',
       fullDesc:
         'The most expensive problem on a construction site is one discovered after concrete is poured. Our pre-construction engineers model every structural and MEP intersection in 3D BIM and stress-test budgets against live supplier lead times.',
       deliverables: [
@@ -199,38 +201,39 @@ export class NielDataService {
       ],
     },
     {
-      slug: 'industrial-infrastructure',
+      slug: 'renovation-fit-out',
       index: '04',
-      tag: 'HEAVY CIVIL',
-      title: 'Industrial & Infrastructure',
+      tag: 'RENEW',
+      title: 'Renovation & Fit-out',
+      image: 'images/service-renovation.jpg',
       shortDesc:
-        'High-bay logistics hubs, cleanrooms, tilt-up facilities, and heavy structural foundations engineered for continuous operation.',
+        'Upgrades and interiors delivered while you stay open.',
       fullDesc:
-        'Industrial builds demand millimeter-level floor flatness, heavy-load foundations, and zero-downtime utility integration. NIEL delivers high-bay distribution, cold-storage, and precision manufacturing facilities at scale.',
+        'Phased commercial retrofits, structural upgrades, and high-spec interior fit-outs engineered around active tenants and zero operational downtime.',
       deliverables: [
-        'High-Tolerance Slab Systems',
-        'MEP Heavy Integration',
-        'ISO 45001 Safety Compliance',
-        'Tilt-Up & Precast Erection',
+        'Phased Occupied Construction',
+        'MEP & Life-Safety Upgrades',
+        'ISO 45001 Dust & Noise Control',
+        'Custom Architectural Millwork',
       ],
-      idealFor: 'Logistics Parks, Manufacturing Plants, Data & Cold Storage',
-      typicalTimeline: '9 – 20 Months',
-      contractModel: 'GMP, Design-Build, or EPCM',
+      idealFor: 'Commercial Interiors, Retail Flagships, Healthcare & Adaptive Reuse',
+      typicalTimeline: '3 – 12 Months',
+      contractModel: 'GMP or Phased Design-Build',
       processSteps: [
         {
           step: '01',
-          title: 'Heavy Civil & Pad Preparation',
-          detail: 'Mass grading, deep foundations, and high-capacity stormwater engineering.',
+          title: 'Existing Conditions Laser Scan',
+          detail: 'Point-cloud scanning of existing structure and MEP risers prior to demolition.',
         },
         {
           step: '02',
-          title: 'Super-Flat Slab & Tilt-Up Erection',
-          detail: 'Laser-screeded FF/FL slabs and rapid structural steel roof framing.',
+          title: 'Off-Hours Phased Execution',
+          detail: 'Negative-air containment and quiet-hour structural tie-ins while operations continue.',
         },
         {
           step: '03',
-          title: 'Automation & Power Commissioning',
-          detail: 'High-voltage switchgear, dock levelers, and racking-ready handover.',
+          title: 'Final Fit-Out & Handover',
+          detail: 'Precision finishes, acoustic testing, and seamless zone-by-zone turnover.',
         },
       ],
     },

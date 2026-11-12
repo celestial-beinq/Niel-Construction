@@ -1,53 +1,147 @@
 <section id="about" class="about-section">
   <div class="container">
-    <div class="section-header-bar">
-      <div class="status-pill status-pill--light">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>01 // ABOUT NIEL</span>
-      </div>
-      <span class="section-meta">EST. 1998 — ISO 9001 &amp; 45001</span>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-lead">
-        <h2 class="section-title section-title--light">
-          <span class="section-title__muted">Built on precision,</span>
-          <span class="section-title__solid">proven on every site.</span>
-        </h2>
-
-        <p class="about-copy">
-          For nearly three decades, NIEL Construction has partnered with developers,
-          architects, and institutions to deliver complex commercial, residential,
-          and industrial builds without schedule drift or budget ambiguity.
-        </p>
-
-        <div class="about-metrics">
-          @for (item of metrics; track item.label) {
-            <div class="about-metric">
-              <div class="about-metric__value">
-                {{ item.value }}@if (item.unit) {<span>{{ item.unit }}</span>}
-              </div>
-              <div class="about-metric__label">{{ item.label }}</div>
-            </div>
-          }
+    <!-- Top Editorial Split -->
+    <div class="about-intro-grid">
+      <div class="about-pill-col">
+        <div class="status-pill status-pill--light">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>ABOUT US</span>
         </div>
       </div>
 
-      <div class="pillars-stack">
-        @for (pillar of pillars; track pillar.index) {
-          <article class="pillar-card">
-            <div class="pillar-card__top">
-              <span class="pillar-card__index">{{ pillar.index }}</span>
-              <span class="pillar-card__metric">{{ pillar.metric }}</span>
+      <h2 class="about-statement">
+        <span class="about-statement__solid">We make construction predictable from day one.</span>
+        <span class="about-statement__muted">
+          Every scope, budget and schedule is locked before ground is broken —
+          so what we promise is exactly what gets built.
+        </span>
+      </h2>
+    </div>
+
+    <!-- Bottom 2-Column Benchmark Card + Overhead Site Photo -->
+    <div class="about-main-grid">
+      <!-- Left Benchmark Card -->
+      <article class="handover-card">
+        <div class="handover-card__top">
+          <span>ON-TIME HANDOVER</span>
+          <span>2015 – 2026</span>
+        </div>
+
+        <div class="handover-card__divider"></div>
+
+        <div class="handover-card__kpi">
+          <span class="kpi-num">98</span><span class="kpi-pct">%</span>
+        </div>
+
+        <div class="benchmark-bars">
+          <div class="benchmark-row">
+            <div class="benchmark-row__labels">
+              <span class="benchmark-row__title">NIEL — 49 OF LAST 50</span>
+              <span class="benchmark-row__val">98%</span>
             </div>
-            <h3 class="pillar-card__title">{{ pillar.title }}</h3>
-            <p class="pillar-card__desc">{{ pillar.description }}</p>
-          </article>
-        }
+            <div class="benchmark-track">
+              <div class="benchmark-fill benchmark-fill--niel" style="width: 98%"></div>
+            </div>
+          </div>
+
+          <div class="benchmark-row">
+            <div class="benchmark-row__labels">
+              <span class="benchmark-row__title benchmark-row__title--muted">INDUSTRY AVERAGE</span>
+              <span class="benchmark-row__val benchmark-row__val--muted">61%</span>
+            </div>
+            <div class="benchmark-track">
+              <div class="benchmark-fill benchmark-fill--avg" style="width: 61%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="handover-card__divider"></div>
+
+        <div class="handover-substats">
+          <div class="handover-substat">
+            <div class="handover-substat__val">340+</div>
+            <div class="handover-substat__label">PROJECTS DELIVERED</div>
+          </div>
+          <div class="handover-substat handover-substat--bordered">
+            <div class="handover-substat__val">0</div>
+            <div class="handover-substat__label">LOST-TIME INCIDENTS, 2025</div>
+          </div>
+        </div>
+
+        <div class="handover-card__divider"></div>
+
+        <p class="handover-card__copy">
+          One accountable team from pre-construction to handover. Our project
+          managers own cost, quality and safety — and report on all three every
+          week.
+        </p>
+
+        <a class="btn-split btn-split--white handover-card__btn" routerLink="/about">
+          <span>LEARN MORE</span>
+          <span class="btn-split__arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </article>
+
+      <!-- Right Visual Card with Quote & Video Trigger -->
+      <div class="about-media-card">
+        <img
+          src="images/about-site-overhead.jpg"
+          alt="NIEL Construction crew tying structural steel rebar on concrete deck"
+          class="about-media-card__img"
+          loading="lazy"
+        />
+
+        <div class="about-quote-overlay">
+          <div class="about-quote-overlay__text">
+            <p class="about-quote-overlay__quote">
+              “A building is only as good as the plan behind it. We obsess over
+              the plan, so the build is the easy part.”
+            </p>
+            <div class="about-quote-overlay__author">
+              <strong>Alexandra Reed</strong>
+              <span>CEO, NIEL</span>
+            </div>
+          </div>
+
+          <button type="button" class="video-trigger" (click)="openVideo()">
+            <span class="video-trigger__icon" aria-hidden="true">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+                <path d="M1 1.5L11 7L1 12.5V1.5Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="video-trigger__meta">
+              <strong>PLAY VIDEO</strong>
+              <span>02:14</span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="ruler-ticks ruler-ticks--light about-ruler" aria-hidden="true"></div>
 </section>
 
+<!-- Video / Field Manifesto Modal -->
+@if (videoModalOpen()) {
+  <div class="video-modal-backdrop" (click)="closeVideo()" role="dialog" aria-modal="true" aria-label="NIEL Construction Field Film">
+    <div class="video-modal" (click)="$event.stopPropagation()">
+      <div class="video-modal__header">
+        <span class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>NIEL // FIELD FILM (02:14)</span>
+        </span>
+        <button type="button" class="video-modal__close" (click)="closeVideo()" aria-label="Close video modal">✕</button>
+      </div>
+      <div class="video-modal__stage">
+        <img src="images/about-site-overhead.jpg" alt="NIEL Construction Field Operations" />
+        <div class="video-modal__caption">
+          <h3>“We obsess over the plan, so the build is the easy part.”</h3>
+          <p>Alexandra Reed, CEO — NIEL Construction Pre-Construction &amp; Field Operations Overview.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}

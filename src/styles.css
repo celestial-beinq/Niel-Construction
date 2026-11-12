@@ -38,7 +38,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--niel-bg-dark);
+  /* background-color: var(--niel-bg-dark); */
   color: var(--niel-text-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -5,8 +5,10 @@
   flex-direction: column;
   justify-content: flex-end;
   padding-top: 7.5rem;
+  margin: 9px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #0b141a;
+  background-color: #fff;
 }
 
 .hero-media {
