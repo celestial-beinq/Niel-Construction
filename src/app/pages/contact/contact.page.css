@@ -110,6 +110,7 @@
   height: 3.5rem;
   border-radius: var(--radius-md);
   object-fit: cover;
+  object-position: top center;
   flex-shrink: 0;
 }
 

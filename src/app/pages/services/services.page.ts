@@ -26,25 +26,25 @@ export class ServicesPage {
 
   protected readonly stages = [
     {
-      code: '01 — PLAN',
+      code: '01 / PLAN',
       title: 'Scope & estimate',
       description:
         'Site review, budget and a fixed schedule before anything is signed.',
     },
     {
-      code: '02 — DESIGN',
+      code: '02 / DESIGN',
       title: 'Engineer & permit',
       description:
         'Drawings, value engineering and permits handled in-house.',
     },
     {
-      code: '03 — BUILD',
+      code: '03 / BUILD',
       title: 'Construct & report',
       description:
         'Weekly cost, quality and safety reports from one project lead.',
     },
     {
-      code: '04 — HANDOVER',
+      code: '04 / HANDOVER',
       title: 'Commission & support',
       description:
         'Snag-free handover with a two-year workmanship warranty.',

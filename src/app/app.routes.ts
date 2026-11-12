@@ -11,14 +11,14 @@ import { ContactPage } from './pages/contact/contact.page';
 import { NotFoundPage } from './pages/not-found/not-found.page';
 
 export const routes: Routes = [
-  { path: '', component: HomePage, title: 'NIEL Construction — Home' },
-  { path: 'about', component: AboutPage, title: 'About — NIEL Construction' },
-  { path: 'services', component: ServicesPage, title: 'Services — NIEL Construction' },
-  { path: 'services/:slug', component: ServiceDetailPage, title: 'Service Detail — NIEL Construction' },
-  { path: 'projects', component: ProjectsPage, title: 'Projects — NIEL Construction' },
-  { path: 'projects/:slug', component: ProjectDetailPage, title: 'Project Case Study — NIEL Construction' },
-  { path: 'news', component: NewsPage, title: 'News — NIEL Construction' },
-  { path: 'news/:slug', component: NewsDetailPage, title: 'Field Dispatch — NIEL Construction' },
-  { path: 'contact', component: ContactPage, title: 'Get Estimate — NIEL Construction' },
-  { path: '**', component: NotFoundPage, title: '404 — NIEL Construction' },
+  { path: '', component: HomePage, title: 'NIEL Construction | Home' },
+  { path: 'about', component: AboutPage, title: 'About | NIEL Construction' },
+  { path: 'services', component: ServicesPage, title: 'Services | NIEL Construction' },
+  { path: 'services/:slug', component: ServiceDetailPage, title: 'Service Detail | NIEL Construction' },
+  { path: 'projects', component: ProjectsPage, title: 'Projects | NIEL Construction' },
+  { path: 'projects/:slug', component: ProjectDetailPage, title: 'Project Case Study | NIEL Construction' },
+  { path: 'news', component: NewsPage, title: 'News | NIEL Construction' },
+  { path: 'news/:slug', component: NewsDetailPage, title: 'Field Dispatch | NIEL Construction' },
+  { path: 'contact', component: ContactPage, title: 'Get Estimate | NIEL Construction' },
+  { path: '**', component: NotFoundPage, title: '404 | NIEL Construction' },
 ];

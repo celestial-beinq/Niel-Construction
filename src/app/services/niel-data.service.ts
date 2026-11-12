@@ -136,7 +136,7 @@ export class NielDataService {
       shortDesc:
         'Architects and builders on one team, one fixed price.',
       fullDesc:
-        'By uniting design and field engineering under one NIEL contract, we overlap permitting, structural procurement, and early site work—eliminating change-order friction and accelerating time-to-revenue.',
+        'By uniting design and field engineering under one NIEL contract, we overlap permitting, structural procurement, and early site work, eliminating change-order friction and accelerating time-to-revenue.',
       deliverables: [
         'Single-Source Accountability',
         'Concurrent Design & Permitting',
@@ -451,7 +451,7 @@ export class NielDataService {
       authorRole: 'Project Director, NIEL Construction',
       image: 'images/project-industrial.jpg',
       paragraphs: [
-        'This week, the NIEL Construction field team placed the final structural roof truss on Northport Logistics Phase II in Lekki Free Zone, Lagos—marking a major milestone 19 calendar days ahead of our baseline critical-path schedule.',
+        'This week, the NIEL Construction field team placed the final structural roof truss on Northport Logistics Phase II in Lekki Free Zone, Lagos, marking a major milestone 19 calendar days ahead of our baseline critical-path schedule.',
         'Spanning 420,000 square feet with a 40-foot clear height, the facility integrates super-flat laser-screeded slabs designed specifically for high-density autonomous storage and retrieval systems.',
         'By overlapping precast panel fabrication with deep-utility installation during pre-construction, our design-build division eliminated six weeks of traditional sequential waiting time while maintaining a 0.00 recordable incident rate.',
       ],
@@ -469,7 +469,7 @@ export class NielDataService {
       image: 'images/hero-construction.jpg',
       paragraphs: [
         'NIEL Construction has successfully completed its annual independent surveillance audit for ISO 45001 Occupational Health & Safety and ISO 9001 Quality Management systems with zero non-conformities.',
-        'Across 34 active job sites and more than 1.2 million labor hours over the past year, our Experience Modification Rate (EMR) improved to 0.42—less than half the national commercial construction average.',
+        'Across 34 active job sites and more than 1.2 million labor hours over the past year, our Experience Modification Rate (EMR) improved to 0.42, less than half the national commercial construction average.',
         'Every morning at 06:30, NIEL superintendents lead mandatory 10-minute hazard-mapping huddles with every trade on site, ensuring safety is engineered into daily workflows rather than treated as paperwork.',
       ],
     },
@@ -485,7 +485,7 @@ export class NielDataService {
       authorRole: 'Head of Virtual Design & Construction',
       image: 'images/project-commercial.jpg',
       paragraphs: [
-        'Most construction cost overruns happen in the ceiling plenum—where structural steel, HVAC ductwork, fire suppression, and electrical conduit compete for the same three inches of clearance.',
+        'Most construction cost overruns happen in the ceiling plenum, where structural steel, HVAC ductwork, fire suppression, and electrical conduit compete for the same three inches of clearance.',
         'At NIEL, every project goes through federated 3D BIM clash detection before a single trade mobilizes. Over the past 12 months, this discipline resolved 1,400+ potential field conflicts digitally, saving our clients an estimated ₦3.6B in rework and schedule delays.',
         'Field tablets sync directly with the federated model, giving superintendents millimeter-accurate layout verification in real time.',
       ],
@@ -592,7 +592,7 @@ export class NielDataService {
     {
       question: 'Can NIEL join a project during early feasibility before architects are finalized?',
       answer:
-        'Yes—and we recommend it. Engaging NIEL during pre-construction allows us to run constructability reviews, value engineering, and long-lead steel/switchgear procurement before design freeze.',
+        'Yes, and we recommend it. Engaging NIEL during pre-construction allows us to run constructability reviews, value engineering, and long-lead steel/switchgear procurement before design freeze.',
     },
     {
       question: 'What geographic regions and project sizes do you cover?',
