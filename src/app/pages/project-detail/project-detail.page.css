@@ -76,12 +76,13 @@
 }
 
 .pd-kpi__value {
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: clamp(1.625rem, 2.5vw, 2.375rem);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
   color: #0e1317;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 .pd-kpi__accent {
