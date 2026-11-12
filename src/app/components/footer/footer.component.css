@@ -162,24 +162,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(0.625rem, 1.5vw, 1.25rem);
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
   user-select: none;
   pointer-events: none;
-  line-height: 0.82;
+  line-height: 0.9;
 }
 
 .footer-watermark-icon {
-  width: clamp(5rem, 15vw, 13rem);
-  height: clamp(5rem, 15vw, 13rem);
+  width: clamp(2.5rem, 7.2vw, 6.75rem);
+  height: clamp(2.5rem, 7.2vw, 6.75rem);
   color: rgba(255, 255, 255, 0.09);
   flex-shrink: 0;
 }
 
 .footer-watermark-text {
-  font-size: clamp(6.5rem, 21vw, 19rem);
+  font-size: clamp(2.65rem, 8.2vw, 8rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
   -webkit-background-clip: text;
   background-clip: text;

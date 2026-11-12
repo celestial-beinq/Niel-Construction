@@ -1,0 +1,158 @@
+<app-navbar />
+<main>
+  <!-- 1. Editorial Services Hero -->
+  <section class="services-hero">
+    <div class="container">
+      <nav class="services-breadcrumb" aria-label="Breadcrumb" data-aos="fade-down">
+        <a routerLink="/" class="services-breadcrumb__link">HOME</a>
+        <span class="services-breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="services-breadcrumb__current" aria-current="page">SERVICES</span>
+      </nav>
+
+      <div class="services-hero__grid">
+        <h1 class="services-hero__title" data-aos="fade-right" data-aos-delay="60">
+          <span class="services-hero__title-solid">Groundwork</span>
+          <span class="services-hero__title-muted">to handover.</span>
+        </h1>
+
+        <div class="services-hero__right" data-aos="fade-left" data-aos-delay="120">
+          <p class="services-hero__copy">
+            Four services, one accountable team. Whether you need a builder for
+            a finished design or a partner from the first sketch, we take full
+            responsibility for cost, schedule and safety.
+          </p>
+
+          <button type="button" class="btn-split services-hero__btn" (click)="scrollToEstimate()">
+            <span>GET AN ESTIMATE</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Our Services Lifecycle Rows -->
+  <section class="services-catalog">
+    <div class="container">
+      <div class="catalog-header" data-aos="fade-up">
+        <div class="status-pill status-pill--light">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>OUR SERVICES</span>
+        </div>
+
+        <h2 class="catalog-heading">
+          <span class="catalog-heading__solid">The full building lifecycle,</span>
+          <span class="catalog-heading__muted">in-house.</span>
+        </h2>
+
+        <span class="catalog-count">(04) SERVICES</span>
+      </div>
+
+      <div class="catalog-list">
+        @for (service of services; track service.slug) {
+          <article class="service-row" data-aos="fade-up" [attr.data-aos-delay]="$index * 60">
+            <div class="service-row__left">
+              <div class="service-row__meta">
+                <span class="service-row__index">{{ service.index }}</span>
+                <span class="service-row__tag">{{ service.tag }}</span>
+              </div>
+              <h3 class="service-row__title">{{ service.title }}</h3>
+            </div>
+
+            <div class="service-row__media">
+              <img
+                [src]="service.image"
+                [alt]="service.title"
+                class="service-row__img"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="service-row__right">
+              <div>
+                <p class="service-row__desc">{{ service.shortDesc }}</p>
+
+                <ul class="service-row__bullets">
+                  @for (item of service.deliverables.slice(0, 3); track item) {
+                    <li class="service-row__bullet">
+                      <span class="service-row__square" aria-hidden="true"></span>
+                      <span>{{ item }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <a class="service-row__explore" [routerLink]="['/services', service.slug]">
+                <span class="service-row__explore-label">EXPLORE SERVICE</span>
+                <span class="service-row__explore-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. How We Build (4-Stage Dark Band) -->
+  <section class="process-section">
+    <div class="container">
+      <div class="process-top" data-aos="fade-down">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>HOW WE BUILD</span>
+        </div>
+      </div>
+
+      <div class="process-header">
+        <h2 class="process-title" data-aos="fade-right">
+          <span class="process-title__solid">Four stages,</span>
+          <span class="process-title__muted">one fixed schedule.</span>
+        </h2>
+
+        <div class="process-header__right" data-aos="fade-left" data-aos-delay="100">
+          <p class="process-copy">
+            Every service follows the same process, so you always know what
+            happens next and who is responsible for it.
+          </p>
+
+          <button type="button" class="btn-split btn-split--white" (click)="scrollToEstimate()">
+            <span>START WITH AN ESTIMATE</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        @for (stage of stages; track stage.code) {
+          <article class="process-card" data-aos="fade-up" [attr.data-aos-delay]="$index * 80">
+            <div class="process-card__code">{{ stage.code }}</div>
+            <h3 class="process-card__title">{{ stage.title }}</h3>
+            <p class="process-card__desc">{{ stage.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ Section -->
+  <app-faq-section />
+
+  <!-- 5. Request an Estimate Section -->
+  <app-estimate-cta-section />
+</main>
+
+<!-- 6. Footer -->
+<app-footer />
+
