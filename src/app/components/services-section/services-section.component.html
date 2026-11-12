@@ -1,0 +1,61 @@
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="services-header">
+      <div class="services-header__top">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>02 // CORE SERVICES</span>
+        </div>
+        <span class="services-count">04 DISCIPLINES</span>
+      </div>
+
+      <div class="services-header__main">
+        <h2 class="section-title section-title--dark">
+          <span class="section-title__muted">Four core disciplines,</span>
+          <span class="section-title__solid">one accountable team.</span>
+        </h2>
+        <p class="services-lead">
+          From early-stage feasibility to final commissioning, every NIEL division
+          operates on unified schedules and shared field telemetry.
+        </p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.index) {
+        <article class="service-card">
+          <div class="service-card__top">
+            <span class="service-card__index">{{ service.index }}</span>
+            <span class="service-card__tag">{{ service.tag }}</span>
+          </div>
+
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+
+          <ul class="service-card__list">
+            @for (item of service.deliverables; track item) {
+              <li>
+                <span class="service-card__bullet" aria-hidden="true"></span>
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+
+          <button
+            type="button"
+            class="service-card__action"
+            (click)="scrollToEstimate()"
+          >
+            <span>REQUEST SCOPE</span>
+            <span class="service-card__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

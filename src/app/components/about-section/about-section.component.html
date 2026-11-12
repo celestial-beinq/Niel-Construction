@@ -1,0 +1,53 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-header-bar">
+      <div class="status-pill status-pill--light">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>01 // ABOUT NIEL</span>
+      </div>
+      <span class="section-meta">EST. 1998 — ISO 9001 &amp; 45001</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-lead">
+        <h2 class="section-title section-title--light">
+          <span class="section-title__muted">Built on precision,</span>
+          <span class="section-title__solid">proven on every site.</span>
+        </h2>
+
+        <p class="about-copy">
+          For nearly three decades, NIEL Construction has partnered with developers,
+          architects, and institutions to deliver complex commercial, residential,
+          and industrial builds without schedule drift or budget ambiguity.
+        </p>
+
+        <div class="about-metrics">
+          @for (item of metrics; track item.label) {
+            <div class="about-metric">
+              <div class="about-metric__value">
+                {{ item.value }}@if (item.unit) {<span>{{ item.unit }}</span>}
+              </div>
+              <div class="about-metric__label">{{ item.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="pillars-stack">
+        @for (pillar of pillars; track pillar.index) {
+          <article class="pillar-card">
+            <div class="pillar-card__top">
+              <span class="pillar-card__index">{{ pillar.index }}</span>
+              <span class="pillar-card__metric">{{ pillar.metric }}</span>
+            </div>
+            <h3 class="pillar-card__title">{{ pillar.title }}</h3>
+            <p class="pillar-card__desc">{{ pillar.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="ruler-ticks ruler-ticks--light about-ruler" aria-hidden="true"></div>
+</section>
+

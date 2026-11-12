@@ -1,0 +1,126 @@
+<section id="home" class="hero">
+  <!-- Background Image & Atmospheric Overlays -->
+  <div class="hero-media" aria-hidden="true">
+    <img
+      src="images/hero-construction.jpg"
+      alt=""
+      class="hero-media__img"
+      fetchpriority="high"
+    />
+    <div class="hero-media__overlay"></div>
+    <div class="hero-media__vignette"></div>
+  </div>
+
+  <div class="container hero-content">
+    <!-- Top-Right Tag -->
+    <div class="hero-top-row">
+      <div class="status-pill status-pill--dark">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>WE ARE NIEL</span>
+      </div>
+    </div>
+
+    <!-- Main Headline -->
+    <div class="hero-headline-wrap">
+      <h1 class="hero-title">
+        <span class="hero-title__muted">More than construction,</span>
+        <span class="hero-title__solid">we build what lasts.</span>
+      </h1>
+    </div>
+
+    <!-- Lower Split Row: Left Copy + CTAs | Right Director Card -->
+    <div class="hero-lower-grid">
+      <div class="hero-lead-col">
+        <p class="hero-subtitle">
+          General contracting, design-build and pre-construction for commercial,
+          residential and industrial projects — delivered on schedule since 1998.
+        </p>
+
+        <div class="hero-actions">
+          <button
+            type="button"
+            class="btn-split btn-split--white"
+            (click)="scrollTo('estimate')"
+          >
+            <span>GET A FREE ESTIMATE</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="btn-split btn-split--glass"
+            (click)="scrollTo('projects')"
+          >
+            <span>VIEW PROJECTS</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Floating Director / Site Visit Card -->
+      <aside class="director-card" aria-label="Project Director Contact">
+        <div class="director-card__body">
+          <div class="director-card__profile">
+            <div class="director-card__avatar-wrap">
+              <img
+                src="images/director-hayes.jpg"
+                alt="Daniel Hayes, Project Director at NIEL Construction"
+                class="director-card__avatar"
+              />
+              <span class="director-card__online" aria-hidden="true"></span>
+            </div>
+            <div>
+              <div class="director-card__name">Daniel Hayes</div>
+              <div class="director-card__role">PROJECT DIRECTOR, NIEL</div>
+            </div>
+          </div>
+
+          <div class="director-card__divider"></div>
+
+          <div class="director-card__availability">
+            <span class="director-card__status">
+              <span class="status-dot status-dot--green" aria-hidden="true"></span>
+              AVAILABLE TODAY
+            </span>
+            <span class="director-card__reply">REPLIES IN ~1H</span>
+          </div>
+
+          <button
+            type="button"
+            class="btn-split btn-split--dark director-card__cta"
+            (click)="scrollTo('estimate')"
+          >
+            <span>BOOK A SITE VISIT</span>
+            <span class="btn-split__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Bottom Metrics Bar & Architectural Ruler -->
+  <div class="hero-footer">
+    <div class="container hero-stats">
+      @for (stat of stats; track stat.label) {
+        <div class="hero-stat">
+          <span class="hero-stat__value">{{ stat.value }}</span>
+          <span class="hero-stat__label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+    <div class="ruler-ticks" aria-hidden="true"></div>
+  </div>
+</section>
+

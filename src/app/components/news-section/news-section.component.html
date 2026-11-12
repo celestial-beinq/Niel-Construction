@@ -1,0 +1,38 @@
+<section id="news" class="news-section">
+  <div class="container">
+    <div class="news-header">
+      <div class="status-pill status-pill--light">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>04 // FIELD DISPATCHES</span>
+      </div>
+      <h2 class="section-title section-title--light">
+        <span class="section-title__muted">Updates from the field,</span>
+        <span class="section-title__solid">news &amp; milestones.</span>
+      </h2>
+    </div>
+
+    <div class="news-grid">
+      @for (item of dispatches; track item.title) {
+        <article class="news-card">
+          <div class="news-card__meta">
+            <span class="news-card__category">{{ item.category }}</span>
+            <span class="news-card__date">{{ item.date }}</span>
+          </div>
+
+          <h3 class="news-card__title">{{ item.title }}</h3>
+          <p class="news-card__excerpt">{{ item.excerpt }}</p>
+
+          <div class="news-card__footer">
+            <span class="news-card__read">{{ item.readTime }}</span>
+            <span class="news-card__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
