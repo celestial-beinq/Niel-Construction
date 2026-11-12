@@ -1,63 +1,61 @@
 <section id="projects" class="projects-section">
   <div class="container">
-    <div class="projects-top">
-      <div class="status-pill status-pill--light">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>03 // FEATURED WORK</span>
+    <div class="projects-header">
+      <div class="projects-header__left">
+        <div class="status-pill status-pill--dark">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>SELECTED PROJECTS</span>
+        </div>
+
+        <h2 class="projects-title">
+          <span class="projects-title__solid">Built to spec,</span>
+          <span class="projects-title__muted"> on time and on budget.</span>
+        </h2>
       </div>
 
-      <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
-        @for (cat of categories; track cat) {
-          <button
-            type="button"
-            role="tab"
-            class="filter-btn"
-            [class.filter-btn--active]="activeCategory() === cat"
-            [attr.aria-selected]="activeCategory() === cat"
-            (click)="setCategory(cat)"
-          >
-            {{ cat }}
-          </button>
-        }
+      <div class="projects-header__right">
+        <p class="projects-lead">
+          A few recent builds across commercial, residential and civic work.
+        </p>
+        <a class="btn-split btn-split--white" routerLink="/projects">
+          <span>VIEW ALL PROJECTS</span>
+          <span class="btn-split__arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
-    <div class="projects-heading-row">
-      <h2 class="section-title section-title--light">
-        <span class="section-title__muted">Built across sectors,</span>
-        <span class="section-title__solid">delivered on schedule.</span>
-      </h2>
-      <p class="projects-count">
-        SHOWING {{ filteredProjects().length }} OF {{ projects.length }} FLAGSHIP BUILDS
-      </p>
-    </div>
-
-    <div class="projects-grid">
-      @for (project of filteredProjects(); track project.code) {
-        <a class="project-card" [routerLink]="['/projects', project.slug]">
-          <div class="project-card__media">
+    <div class="projects-bento">
+      @for (project of projects; track project.code) {
+        <a
+          class="bento-card"
+          [class.bento-card--featured]="$first"
+          [routerLink]="['/projects', project.slug]"
+        >
+          <div class="bento-card__media">
             <img
               [src]="project.image"
               [alt]="project.title"
-              class="project-card__img"
+              class="bento-card__img"
               loading="lazy"
             />
-            <span class="project-card__code">{{ project.code }}</span>
-            <span class="project-card__category">{{ project.category }}</span>
           </div>
 
-          <div class="project-card__body">
-            <div class="project-card__meta">
-              <span>{{ project.location }}</span>
-              <span>{{ project.area }}</span>
-              <span>{{ project.year }}</span>
+          <div class="bento-card__footer">
+            <div class="bento-card__top">
+              <h3 class="bento-card__title">{{ project.title }}</h3>
+              <span class="bento-card__year">{{ project.year }}</span>
             </div>
-            <h3 class="project-card__title">{{ project.title }}</h3>
-            <p class="project-card__summary">{{ project.summary }}</p>
+            <div class="bento-card__meta">
+              <span>{{ project.location }}</span>
+              <span>{{ project.category }}</span>
+            </div>
           </div>
         </a>
       }
     </div>
   </div>
 </section>
-

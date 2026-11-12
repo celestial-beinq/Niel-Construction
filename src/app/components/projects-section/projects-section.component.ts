@@ -1,8 +1,6 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NielDataService, ProjectCategory } from '../../services/niel-data.service';
-
-type FilterCategory = 'ALL' | ProjectCategory;
+import { NielDataService } from '../../services/niel-data.service';
 
 @Component({
   selector: 'app-projects-section',
@@ -14,24 +12,5 @@ type FilterCategory = 'ALL' | ProjectCategory;
 export class ProjectsSectionComponent {
   private readonly data = inject(NielDataService);
 
-  protected readonly categories: FilterCategory[] = [
-    'ALL',
-    'COMMERCIAL',
-    'INDUSTRIAL',
-    'RESIDENTIAL',
-  ];
-  protected readonly activeCategory = signal<FilterCategory>('ALL');
-  protected readonly projects = this.data.projects;
-
-  protected readonly filteredProjects = computed(() => {
-    const selected = this.activeCategory();
-    if (selected === 'ALL') {
-      return this.projects;
-    }
-    return this.projects.filter((project) => project.category === selected);
-  });
-
-  protected setCategory(category: FilterCategory): void {
-    this.activeCategory.set(category);
-  }
+  protected readonly projects = this.data.projects.slice(0, 3);
 }

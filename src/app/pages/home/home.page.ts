@@ -5,6 +5,7 @@ import { LogoMarqueeComponent } from '../../components/logo-marquee/logo-marquee
 import { AboutSectionComponent } from '../../components/about-section/about-section.component';
 import { ServicesSectionComponent } from '../../components/services-section/services-section.component';
 import { ProjectsSectionComponent } from '../../components/projects-section/projects-section.component';
+import { HowWeBuildComponent } from '../../components/how-we-build/how-we-build.component';
 import { ReviewsSectionComponent } from '../../components/reviews-section/reviews-section.component';
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component';
 import { NewsSectionComponent } from '../../components/news-section/news-section.component';
@@ -21,6 +22,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
     AboutSectionComponent,
     ServicesSectionComponent,
     ProjectsSectionComponent,
+    HowWeBuildComponent,
     ReviewsSectionComponent,
     FaqSectionComponent,
     NewsSectionComponent,

@@ -1,60 +1,61 @@
 <section id="services" class="services-section">
   <div class="container">
     <div class="services-header">
-      <div class="services-header__top">
-        <div class="status-pill status-pill--dark">
+      <div class="services-header__left">
+        <div class="status-pill status-pill--light">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>02 // CORE SERVICES</span>
+          <span>SERVICES</span>
         </div>
-        <span class="services-count">04 DISCIPLINES</span>
+
+        <h2 class="services-title">
+          <span class="services-title__solid">From groundwork to handover,</span>
+          <span class="services-title__muted"> one accountable team.</span>
+        </h2>
       </div>
 
-      <div class="services-header__main">
-        <h2 class="section-title section-title--dark">
-          <span class="section-title__muted">Four core disciplines,</span>
-          <span class="section-title__solid">one accountable team.</span>
-        </h2>
+      <div class="services-header__right">
         <p class="services-lead">
-          From early-stage feasibility to final commissioning, every NIEL division
-          operates on unified schedules and shared field telemetry.
+          We cover the full building lifecycle in-house, so nothing gets lost
+          between design, procurement and the site.
         </p>
+        <a class="btn-split btn-split--white services-all-btn" routerLink="/services">
+          <span>ALL SERVICES</span>
+          <span class="btn-split__arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
 
     <div class="services-grid">
-      @for (service of services; track service.index) {
-        <article class="service-card">
-          <div class="service-card__top">
-            <span class="service-card__index">{{ service.index }}</span>
-            <span class="service-card__tag">{{ service.tag }}</span>
+      @for (service of services; track service.slug) {
+        <a class="service-card" [routerLink]="['/services', service.slug]">
+          <div class="service-card__media">
+            <img [src]="service.image" [alt]="service.title" loading="lazy" />
           </div>
 
-          <h3 class="service-card__title">{{ service.title }}</h3>
-          <p class="service-card__desc">{{ service.shortDesc }}</p>
+          <div class="service-card__body">
+            <div class="service-card__top">
+              <span class="service-card__index">{{ service.index }}</span>
+              <span class="service-card__tag">{{ service.tag }}</span>
+            </div>
 
-          <ul class="service-card__list">
-            @for (item of service.deliverables; track item) {
-              <li>
-                <span class="service-card__bullet" aria-hidden="true"></span>
-                <span>{{ item }}</span>
-              </li>
-            }
-          </ul>
+            <h3 class="service-card__title">{{ service.title }}</h3>
+            <p class="service-card__desc">{{ service.shortDesc }}</p>
 
-          <a
-            class="service-card__action"
-            [routerLink]="['/services', service.slug]"
-          >
-            <span>VIEW SERVICE SPEC</span>
-            <span class="service-card__arrow" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </a>
-        </article>
+            <div class="service-card__footer">
+              <span>EXPLORE</span>
+              <span class="service-card__circle" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
       }
     </div>
   </div>
 </section>
-

@@ -1,0 +1,19 @@
+<section id="how-we-build" class="how-we-build-section">
+  <div class="container">
+    <div class="status-pill status-pill--dark how-we-build__pill">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>HOW WE BUILD</span>
+    </div>
+
+    <div class="how-we-build__grid">
+      @for (step of steps; track step.label) {
+        <article class="build-step">
+          <span class="build-step__label">{{ step.label }}</span>
+          <h3 class="build-step__title">{{ step.title }}</h3>
+          <p class="build-step__desc">{{ step.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
